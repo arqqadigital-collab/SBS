@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import GlowingButton from '@/components/ui/GlowingButton';
 
 const cases = [
   {
@@ -25,16 +24,25 @@ const cases = [
 
 const CaseStudiesSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const nextSlide = () => setActiveIndex((prev) => (prev + 1) % cases.length);
   const prevSlide = () => setActiveIndex((prev) => (prev === 0 ? cases.length - 1 : prev - 1));
 
-  return (
-    <section className="py-24 bg-white px-4 md:px-8 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isHovered, cases.length]);
 
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#003366] mb-4">
+  return (
+    <section className="py-24 bg-white px-6 md:px-16 lg:px-24 overflow-hidden relative">
+      <div className="max-w-7xl mx-auto bg-white border-2 border-lime-500 rounded-[2rem] p-8 md:p-12 lg:p-16 shadow-xl relative z-10">
+        
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bebas text-[#003366] mb-4 uppercase">
             Case Studies
           </h2>
           <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto">
@@ -42,7 +50,11 @@ const CaseStudiesSection = () => {
           </p>
         </div>
 
-        <div className="relative min-h-[550px] md:min-h-[400px] mb-12">
+        <div 
+          className="relative min-h-[550px] md:min-h-[400px] mb-12"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {cases.map((c, idx) => (
             <div
               key={idx}
@@ -112,9 +124,9 @@ const CaseStudiesSection = () => {
         </div>
 
         <div className="text-center mt-8 border-t border-gray-100 pt-12">
-          <GlowingButton>
+          <button className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-wide text-sm transition-colors shadow-sm">
             View Case Studies
-          </GlowingButton>
+          </button>
         </div>
 
       </div>

@@ -1,9 +1,8 @@
 import { Search } from 'lucide-react';
 
 const Navbar = () => (
-  <nav className="relative flex justify-center items-center py-6 px-4 md:px-8 text-white z-10 w-full">
+  <nav className="relative flex justify-center items-center py-6 px-6 md:px-16 lg:px-24 text-white z-10 w-full">
     <div className="flex items-center justify-between w-full max-w-7xl">
-      {/* Logo on the left */}
       <div className="flex-shrink-0 z-20">
         <img 
           src="https://res.cloudinary.com/dcjufshrh/image/upload/v1771751101/Logo_aia3du.png" 
@@ -12,7 +11,6 @@ const Navbar = () => (
         />
       </div>
 
-      {/* Desktop Links on the right */}
       <div className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
         <a href="#" className="hover:text-lime-400 transition-colors">Products</a>
         <a href="#" className="hover:text-lime-400 transition-colors">Solutions</a>
@@ -21,13 +19,11 @@ const Navbar = () => (
         <a href="#" className="hover:text-lime-400 transition-colors">Pricing</a>
         <a href="#" className="hover:text-lime-400 transition-colors">Resources</a>
 
-        {/* Search Icon */}
         <button className="p-2 hover:bg-white/10 rounded-full transition-colors ml-2">
           <Search className="w-5 h-5" />
         </button>
       </div>
 
-      {/* Mobile Search Icon */}
       <div className="flex md:hidden items-center">
         <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
           <Search className="w-5 h-5" />

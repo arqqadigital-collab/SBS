@@ -4,7 +4,6 @@ import {
   ClipboardList, MonitorPlay, HeartPulse, CreditCard,
   BrainCircuit, ShieldCheck, UserPlus, Plug
 } from 'lucide-react';
-import GlowingButton from '@/components/ui/GlowingButton';
 
 interface TabCapability {
   text: string;
@@ -65,7 +64,6 @@ const TransformSection = () => {
   const tabs = Object.keys(tabData);
   const currentContent = tabData[activeTab];
 
-  // Scroll-based tab switching
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
@@ -83,9 +81,7 @@ const TransformSection = () => {
             if (scrollableDistance > 0) {
               let progress = -top / scrollableDistance;
               progress = Math.max(0, Math.min(1, progress));
-              
               const index = Math.min(tabs.length - 1, Math.floor(progress * tabs.length));
-              
               setActiveTab(prevTab => {
                 const newTab = tabs[index];
                 return prevTab !== newTab ? newTab : prevTab;
@@ -121,9 +117,9 @@ const TransformSection = () => {
   };
 
   return (
-    <div ref={sectionRef} className="relative h-[200vh] bg-white mt-24 lg:mt-32">
+    <div ref={sectionRef} className="relative h-[200vh] bg-white mt-24 lg:mt-32 mb-32 md:mb-48">
       <div className="sticky top-0 min-h-screen flex flex-col justify-center overflow-hidden py-8 md:py-12 z-10">
-        <section className="px-4 md:px-8 max-w-7xl mx-auto text-center w-full">
+        <section className="px-6 md:px-16 lg:px-24 max-w-7xl mx-auto text-center w-full">
           <style>{`
             @keyframes slideInLeft {
               from { opacity: 0; transform: translateX(-30px); }
@@ -143,7 +139,7 @@ const TransformSection = () => {
             }
           `}</style>
 
-          <h2 className="text-4xl font-bold text-[#003366] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bebas text-[#003366] mb-4 uppercase">
             How We Transform <span className="text-lime-500">Your Business</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto mb-12">
@@ -156,9 +152,9 @@ const TransformSection = () => {
               <button
                 key={tab}
                 onClick={() => handleTabClick(tab)}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full font-bold transition-all duration-300 ${
                   activeTab === tab 
-                    ? 'bg-[#005599] text-white shadow-md scale-105' 
+                    ? 'bg-[#003366] text-white shadow-lg scale-105' 
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
@@ -169,10 +165,11 @@ const TransformSection = () => {
 
           {/* Content Area */}
           <div className="flex flex-col md:flex-row gap-12 text-left items-center min-h-[400px]">
-            {/* Text Area */}
             <div key={`text-${activeTab}`} className="w-full md:w-1/2 space-y-6 order-2 md:order-1">
-              <h3 className="text-2xl font-bold text-[#003366] animate-slide-left" style={{ animationDelay: '0ms' }}>
-                {currentContent.title}
+              <h3 className="text-2xl md:text-3xl font-bebas text-[#003366] animate-slide-left leading-snug uppercase" style={{ animationDelay: '0ms' }}>
+                <span className="bg-lime-200/80 px-3 py-1.5 rounded-lg border-l-4 border-lime-500 inline-block shadow-sm">
+                  {currentContent.title}
+                </span>
               </h3>
               <p className="text-gray-600 leading-relaxed animate-slide-left" style={{ animationDelay: '100ms' }}>
                 {currentContent.description}
@@ -195,9 +192,9 @@ const TransformSection = () => {
                 })}
               </ul>
               <div className="animate-slide-up" style={{ animationDelay: '600ms' }}>
-                <GlowingButton className="mt-4">
+                <button className="mt-4 bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-wide text-sm transition-colors shadow-sm">
                   {currentContent.cta}
-                </GlowingButton>
+                </button>
               </div>
             </div>
 
