@@ -90,13 +90,18 @@ const TrustedSection = () => (
         flex-wrap: nowrap;
         flex-shrink: 0;
         align-items: center;
-        gap: 4rem;
-        padding: 0 2rem;
+        gap: 6rem;
+        padding: 0 3rem;
+      }
+      @media (min-width: 768px) {
+        .logo-track {
+          gap: 8rem;
+        }
       }
     `}</style>
     
-    <div className="max-w-6xl mx-auto text-center px-4 mb-12">
-      <h2 className="text-3xl font-bold text-[#003366] mb-4">
+    <div className="max-w-6xl mx-auto text-center px-6 md:px-16 lg:px-24 mb-12">
+      <h2 className="text-4xl md:text-5xl font-bebas text-[#003366] mb-4 uppercase">
         Trusted by <br/>
         <span className="text-lime-500">Leading Organizations</span>
       </h2>
@@ -119,7 +124,7 @@ const TrustedSection = () => (
                 key={`logo-1-${index}`} 
                 src={logo} 
                 alt="Client Logo" 
-                className="h-16 md:h-20 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
+                className="h-12 md:h-16 w-32 md:w-48 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
               />
             ))}
           </div>
@@ -129,7 +134,7 @@ const TrustedSection = () => (
                 key={`logo-2-${index}`} 
                 src={logo} 
                 alt="Client Logo" 
-                className="h-16 md:h-20 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
+                className="h-12 md:h-16 w-32 md:w-48 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
               />
             ))}
           </div>
@@ -138,32 +143,32 @@ const TrustedSection = () => (
     </div>
 
     {/* Stats Box */}
-    <div className="max-w-5xl mx-auto px-4 relative z-20">
-      <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-10 md:p-14 flex flex-col md:flex-row justify-around gap-12 text-center border border-gray-100/50">
+    <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 relative z-20">
+      <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-10 md:p-14 flex flex-col md:flex-row justify-around gap-12 text-center border-2 border-lime-500">
         <div>
           <div className="text-5xl md:text-6xl font-extrabold text-[#003366] mb-3 tracking-tight">
             <AnimatedCounter end={200} suffix="+" duration={2500} />
           </div>
-          <div className="text-gray-500 font-semibold uppercase tracking-wider text-sm">Organizations<br/>Transformed</div>
+          <div className="text-[#005599] font-bold uppercase tracking-wider text-base md:text-lg">Organizations<br/>Transformed</div>
         </div>
-        <div className="hidden md:block w-px bg-gray-100"></div>
+        <div className="hidden md:block w-px bg-gray-200"></div>
         <div>
           <div className="text-5xl md:text-6xl font-extrabold text-[#003366] mb-3 tracking-tight">
             <AnimatedCounter end={15} suffix="+" duration={2000} />
           </div>
-          <div className="text-gray-500 font-semibold uppercase tracking-wider text-sm">Industries<br/>Served</div>
+          <div className="text-[#005599] font-bold uppercase tracking-wider text-base md:text-lg">Industries<br/>Served</div>
         </div>
-        <div className="hidden md:block w-px bg-gray-100"></div>
+        <div className="hidden md:block w-px bg-gray-200"></div>
         <div>
           <div className="text-5xl md:text-6xl font-extrabold text-[#003366] mb-3 tracking-tight">
             <AnimatedCounter end={98} suffix="%" duration={2500} />
           </div>
-          <div className="text-gray-500 font-semibold uppercase tracking-wider text-sm">Client Satisfaction<br/>Rate</div>
+          <div className="text-[#005599] font-bold uppercase tracking-wider text-base md:text-lg">Client Satisfaction<br/>Rate</div>
         </div>
       </div>
     </div>
 
-    {/* Partners Row (Reverse Scroll) */}
+    {/* Partners Row */}
     <div className="mt-24">
       <h3 className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Partners</h3>
       <div className="w-full relative">
@@ -172,30 +177,24 @@ const TrustedSection = () => (
         
         <div className="animate-marquee-reverse">
           <div className="logo-track">
-            {partnerLogos.map((logo, index) => {
-              const isEndnote = logo.includes('endnote');
-              return (
-                <img 
-                  key={`logo-3-${index}`} 
-                  src={logo} 
-                  alt="Partner Logo" 
-                  className={`${isEndnote ? 'h-10 md:h-12' : 'h-16 md:h-20'} w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0`}
-                />
-              );
-            })}
+            {partnerLogos.map((logo, index) => (
+              <img 
+                key={`logo-3-${index}`} 
+                src={logo} 
+                alt="Partner Logo" 
+                className="h-12 md:h-16 w-32 md:w-48 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
+              />
+            ))}
           </div>
           <div className="logo-track">
-            {partnerLogos.map((logo, index) => {
-              const isEndnote = logo.includes('endnote');
-              return (
-                <img 
-                  key={`logo-4-${index}`} 
-                  src={logo} 
-                  alt="Partner Logo" 
-                  className={`${isEndnote ? 'h-10 md:h-12' : 'h-16 md:h-20'} w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0`}
-                />
-              );
-            })}
+            {partnerLogos.map((logo, index) => (
+              <img 
+                key={`logo-4-${index}`} 
+                src={logo} 
+                alt="Partner Logo" 
+                className="h-12 md:h-16 w-32 md:w-48 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0"
+              />
+            ))}
           </div>
         </div>
       </div>

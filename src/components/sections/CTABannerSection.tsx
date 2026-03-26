@@ -2,7 +2,9 @@ import { TrendingUp, ShieldCheck, Users } from 'lucide-react';
 import GlowingButton from '@/components/ui/GlowingButton';
 
 const CTABannerSection = () => (
-  <section className="py-24 bg-white px-4 md:px-8 max-w-7xl mx-auto overflow-hidden">
+  <section className="py-24 bg-gradient-to-r from-[#005599] to-[#0088cc] px-6 md:px-16 lg:px-24 overflow-hidden relative">
+    <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 transform skew-x-12 translate-x-1/4 pointer-events-none"></div>
+
     <style>{`
       @keyframes float-slow {
         0%, 100% { transform: translateY(0px); }
@@ -16,13 +18,13 @@ const CTABannerSection = () => (
       .animate-float-medium { animation: float-medium 3.5s ease-in-out infinite; }
     `}</style>
     
-    <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+    <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20 relative z-10">
       
       <div className="w-full md:w-1/2 text-center md:text-left space-y-6 order-2 md:order-1">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#003366] uppercase tracking-widest leading-tight">
-          Ready To <span className="text-lime-500">Evolve?</span>
+        <h2 className="text-5xl md:text-6xl font-bebas text-white uppercase tracking-widest leading-tight">
+          Ready To <span className="text-lime-400">Evolve?</span>
         </h2>
-        <p className="text-gray-600 text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+        <p className="text-blue-100 font-medium text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
           Join the ranks of industry leaders who have successfully navigated the digital landscape with our proven methodologies and cutting-edge solutions.
         </p>
         
@@ -68,7 +70,7 @@ const CTABannerSection = () => (
            </div>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-tr from-lime-200 to-blue-200 rounded-full blur-3xl -z-10 opacity-60"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-lime-400/20 rounded-full blur-3xl -z-10 opacity-80"></div>
       </div>
 
     </div>

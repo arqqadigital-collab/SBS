@@ -10,11 +10,9 @@ const deliverItems = [
 ];
 
 const DeliverSection = () => (
-  <section className="py-24 bg-gradient-to-r from-[#005599] to-[#0088cc] px-4 md:px-8 text-white relative overflow-hidden">
-     {/* Abstract background curve */}
+  <section className="py-24 bg-gradient-to-r from-[#005599] to-[#0088cc] px-6 md:px-16 lg:px-24 text-white relative overflow-hidden">
      <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 transform skew-x-12 translate-x-1/4 pointer-events-none"></div>
 
-     {/* Custom Scrollbar Styles for the right side menu */}
      <style>{`
       .deliver-scroll::-webkit-scrollbar { width: 6px; }
       .deliver-scroll::-webkit-scrollbar-track { background: transparent; }
@@ -24,7 +22,7 @@ const DeliverSection = () => (
 
     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
       <div className="lg:w-1/2 space-y-8 z-10 sticky top-24">
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+        <h2 className="text-5xl md:text-6xl font-bebas leading-tight uppercase">
           What We <br/>
           <span className="text-lime-400">Deliver to You</span>
         </h2>
@@ -57,7 +55,7 @@ const DeliverSection = () => (
               <item.icon className="w-8 h-8 text-lime-400" />
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+              <h3 className="text-2xl font-bebas mb-2 uppercase">{item.title}</h3>
               <p className="text-blue-100 text-sm leading-relaxed">{item.desc}</p>
             </div>
           </div>

@@ -17,8 +17,8 @@ const Hero = () => (
 
     <Navbar />
 
-    <div className="flex-1 flex flex-col items-center justify-center text-center px-4 relative z-10 mt-12 mb-24">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl leading-tight mb-6 drop-shadow-lg">
+    <div className="flex-1 flex flex-col items-center justify-center text-center px-6 md:px-16 lg:px-24 relative z-10 mt-12 mb-24">
+      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bebas text-white max-w-4xl leading-tight mb-6 drop-shadow-lg uppercase">
         Transforming Complexity into Digital Clarity
       </h1>
       <p className="text-blue-50 text-lg md:text-xl max-w-2xl mb-10 drop-shadow-md font-medium">

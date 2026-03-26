@@ -1,10 +1,10 @@
 import Hero from '@/components/sections/Hero';
+import ExpertiseSection from '@/components/sections/ExpertiseSection';
 import TransformSection from '@/components/sections/TransformSection';
 import DeliverSection from '@/components/sections/DeliverSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import TrustedSection from '@/components/sections/TrustedSection';
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
-import TestimonialSection from '@/components/sections/TestimonialSection';
 import CTABannerSection from '@/components/sections/CTABannerSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/layout/Footer';
@@ -12,12 +12,12 @@ import Footer from '@/components/layout/Footer';
 const Index = () => (
   <div className="min-h-screen font-sans text-slate-800 selection:bg-lime-200 selection:text-[#003366]">
     <Hero />
+    <ExpertiseSection />
     <TransformSection />
     <DeliverSection />
     <ServicesSection />
     <TrustedSection />
     <CaseStudiesSection />
-    <TestimonialSection />
     <CTABannerSection />
     <ContactSection />
     <Footer />
