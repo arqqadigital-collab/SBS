@@ -11,20 +11,13 @@ const deliverItems = [
 
 const DeliverSection = () => (
   <section className="py-24 bg-gradient-to-r from-[#005599] to-[#0088cc] px-6 md:px-16 lg:px-24 text-white relative overflow-hidden">
-     <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 transform skew-x-12 translate-x-1/4 pointer-events-none"></div>
+    <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 transform skew-x-12 translate-x-1/4 pointer-events-none"></div>
 
-     <style>{`
-      .deliver-scroll::-webkit-scrollbar { width: 6px; }
-      .deliver-scroll::-webkit-scrollbar-track { background: transparent; }
-      .deliver-scroll::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
-      .deliver-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
-    `}</style>
-
-    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
-      <div className="lg:w-1/2 space-y-8 z-10 sticky top-24">
-        <h2 className="text-5xl md:text-6xl font-bebas leading-tight uppercase">
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-start relative z-10">
+      <div className="lg:w-[45%] space-y-8">
+        <h2 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
           What We <br/>
-          <span className="text-lime-400">Deliver to You</span>
+          <span className="text-lime-400">Deliver To You</span>
         </h2>
         <p className="text-blue-100 text-lg leading-relaxed max-w-lg">
           Our commitment to excellence is reflected in these core promises, ensuring your digital transformation journey is seamless, impactful, and aligned with your strategic goals.
@@ -48,15 +41,15 @@ const DeliverSection = () => (
         </p>
       </div>
 
-      <div className="lg:w-1/2 space-y-4 w-full z-10 max-h-[500px] overflow-y-auto pr-3 deliver-scroll">
+      <div className="lg:w-[55%] w-full grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
         {deliverItems.map((item, idx) => (
-          <div key={idx} className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 flex gap-6 items-start hover:bg-white/20 transition-all cursor-default group">
-            <div className="p-3 bg-white/10 rounded-lg shrink-0 group-hover:scale-110 transition-transform">
-              <item.icon className="w-8 h-8 text-lime-400" />
+          <div key={idx} className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/10 flex flex-col items-start hover:bg-white/15 transition-all cursor-default h-full">
+            <div className="p-3 bg-white/10 rounded-xl shrink-0 shadow-inner mb-4">
+              <item.icon className="w-7 h-7 text-lime-400" strokeWidth={2} />
             </div>
             <div>
-              <h3 className="text-2xl font-bebas mb-2 uppercase">{item.title}</h3>
-              <p className="text-blue-100 text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="text-xl font-bold tracking-wide mb-2">{item.title}</h3>
+              <p className="text-blue-50 text-sm leading-relaxed">{item.desc}</p>
             </div>
           </div>
         ))}

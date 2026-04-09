@@ -44,9 +44,8 @@ const ContactSection = () => {
         
         <div className="bg-white p-4 md:p-6 lg:p-8 rounded-[2rem] shadow-xl border-2 border-lime-500 flex flex-col lg:flex-row gap-6 md:gap-8">
           
-          {/* Form - Left Column */}
           <div className="w-full lg:w-1/2 p-4 md:p-8 lg:p-10 flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl font-bebas text-[#003366] mb-3 uppercase">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#003366] mb-3 tracking-tight">
               Start Your Next Big Move
             </h2>
             <p className="text-gray-500 mb-10 text-lg">
@@ -72,7 +71,7 @@ const ContactSection = () => {
               
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">Area of inquiry</label>
-                <select className="w-full p-3 rounded-lg bg-white border border-gray-200 text-gray-600 focus:outline-none focus:border-[#005599] focus:ring-1 focus:ring-[#005599] transition-all" defaultValue="">
+                <select defaultValue="" className="w-full p-3 rounded-lg bg-white border border-gray-200 text-gray-600 focus:outline-none focus:border-[#005599] focus:ring-1 focus:ring-[#005599] transition-all">
                   <option value="" disabled>Select an area...</option>
                   <option value="erp">ERP & Enterprise Systems</option>
                   <option value="healthcare">Healthcare Digital Transformation</option>
@@ -94,7 +93,6 @@ const ContactSection = () => {
             </form>
           </div>
 
-          {/* Testimonial Card - Right Column */}
           <div className="w-full lg:w-1/2 relative rounded-[1.5rem] overflow-hidden min-h-[500px] flex flex-col justify-end p-8 md:p-12">
             
             <video 

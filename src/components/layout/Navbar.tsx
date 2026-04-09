@@ -5,7 +5,7 @@ const Navbar = () => (
     <div className="flex items-center justify-between w-full max-w-7xl">
       <div className="flex-shrink-0 z-20">
         <img 
-          src="https://res.cloudinary.com/dcjufshrh/image/upload/v1771751101/Logo_aia3du.png" 
+          src="https://res.cloudinary.com/djxcjlhtn/image/upload/v1775654798/logo_2_r7esef.png" 
           alt="TechSync Logo" 
           className="h-10 md:h-12 lg:h-16 object-contain" 
         />

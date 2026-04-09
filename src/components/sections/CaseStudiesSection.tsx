@@ -42,7 +42,7 @@ const CaseStudiesSection = () => {
       <div className="max-w-7xl mx-auto bg-white border-2 border-lime-500 rounded-[2rem] p-8 md:p-12 lg:p-16 shadow-xl relative z-10">
         
         <div className="text-center mb-8">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bebas text-[#003366] mb-4 uppercase">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#003366] mb-4 tracking-tight">
             Case Studies
           </h2>
           <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto">
@@ -51,7 +51,7 @@ const CaseStudiesSection = () => {
         </div>
 
         <div 
-          className="relative min-h-[550px] md:min-h-[400px] mb-12"
+          className="relative min-h-[550px] md:min-h-[400px] mb-4"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -123,7 +123,7 @@ const CaseStudiesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-8 border-t border-gray-100 pt-12">
+        <div className="text-center mt-4 border-t border-gray-100 pt-8">
           <button className="bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-wide text-sm transition-colors shadow-sm">
             View Case Studies
           </button>

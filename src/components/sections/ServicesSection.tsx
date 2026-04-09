@@ -1,177 +1,119 @@
-import { useState, useEffect, useRef } from 'react';
-import { Layers, BrainCircuit, ShieldCheck, UserPlus, Network, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 const services = [
   {
-    title: "ERP Implementation & Optimization",
-    description: "Tailored deployment and continuous enhancement of enterprise systems to streamline your operations.",
-    icon: Layers,
-    color: "text-[#005599]",
-    bg: "bg-blue-50",
-    bar: "bg-[#005599]"
-  },
-  {
-    title: "AI Healthcare Transformation",
-    description: "Leverage artificial intelligence to optimize clinical workflows and drive medical innovation.",
-    icon: BrainCircuit,
-    color: "text-lime-600",
-    bg: "bg-lime-50",
-    bar: "bg-lime-500"
-  },
-  {
-    title: "Healthcare Compliance",
+    id: 0,
+    category: "SERVICES",
+    titleHighlight: "Healthcare",
+    titleRest: "Compliance",
     description: "Ensure your operations strictly adhere to DHA, DoH, ADHICS, and regional healthcare standards.",
-    icon: ShieldCheck,
-    color: "text-[#003366]",
-    bg: "bg-slate-50",
-    bar: "bg-[#003366]"
+    author: "TechSync Solutions",
+    bgImage: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775730426/shutterstock_1884612574_sctjon.jpg"
   },
   {
-    title: "Staff Augmentation & Managed Services",
+    id: 1,
+    category: "SERVICES",
+    titleHighlight: "ERP Implementation",
+    titleRest: "& Optimization",
+    description: "Tailored deployment and continuous enhancement of enterprise systems to streamline your operations.",
+    author: "TechSync Solutions",
+    bgImage: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775727056/shutterstock_2594827187_cbbkvf.jpg"
+  },
+  {
+    id: 2,
+    category: "SERVICES",
+    titleHighlight: "AI Healthcare",
+    titleRest: "Transformation",
+    description: "Leverage artificial intelligence to optimize clinical workflows and drive medical innovation.",
+    author: "TechSync Solutions",
+    bgImage: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775726599/Screen_Shot_2026-04-09_at_11.19.06_AM_flz7iu.png"
+  },
+  {
+    id: 3,
+    category: "SERVICES",
+    titleHighlight: "Staff Augmentation",
+    titleRest: "& Managed Services",
     description: "Scale your teams rapidly with specialized IT professionals and comprehensive managed support solutions.",
-    icon: UserPlus,
-    color: "text-lime-600",
-    bg: "bg-lime-50",
-    bar: "bg-lime-500"
+    author: "TechSync Solutions",
+    bgImage: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775662938/Screen_Shot_2026-04-08_at_5.42.08_PM_r9fl0p.png"
   },
   {
-    title: "Implementation & Integration",
+    id: 4,
+    category: "SERVICES",
+    titleHighlight: "Implementation",
+    titleRest: "& Integration",
     description: "Seamlessly connect disparate systems to create a unified, data-driven technological ecosystem.",
-    icon: Network,
-    color: "text-[#005599]",
-    bg: "bg-blue-50",
-    bar: "bg-[#005599]"
+    author: "TechSync Solutions",
+    bgImage: "https://res.cloudinary.com/djxcjlhtn/image/upload/v1775729948/shutterstock_568968850_ap5mha.jpg"
   }
 ];
 
 const ServicesSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const firstCard = scrollRef.current.firstElementChild as HTMLElement | null;
-      if (firstCard) {
-        const scrollAmount = firstCard.offsetWidth + 24;
-        scrollRef.current.scrollBy({
-          left: direction === 'left' ? -scrollAmount : scrollAmount,
-          behavior: 'smooth'
-        });
-      }
-    }
-  };
-
-  useEffect(() => {
-    if (isHovered) return;
-
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        const firstCard = scrollRef.current.firstElementChild as HTMLElement | null;
-        if (firstCard) {
-          const scrollAmount = firstCard.offsetWidth + 24;
-          const maxScrollLeft = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-
-          if (scrollRef.current.scrollLeft >= maxScrollLeft - 10) {
-            scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-          }
-        }
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [isHovered]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-24 bg-white border-b border-gray-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24">
-
-        <div className="text-center mb-8 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bebas text-[#003366] mb-4 uppercase">
-            Our <span className="text-lime-500">Services</span>
-          </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto mb-4">
-            We deliver structured, execution-focused services that help healthcare and enterprise organizations operate with clarity, compliance, and control.
-          </p>
-        </div>
-
-        <div 
-          className="relative w-full md:px-12 lg:px-16"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+    <section className="relative w-full h-[80vh] min-h-[700px] max-h-[900px] bg-black overflow-hidden font-sans">
+      
+      {services.map((svc, idx) => (
+        <div
+          key={svc.id}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            idx === activeIndex ? 'opacity-100 z-0' : 'opacity-0 z-0 pointer-events-none'
+          }`}
         >
+          <img src={svc.bgImage} alt={svc.titleHighlight} className="w-full h-full object-cover" />
+        </div>
+      ))}
 
-          <button
-            onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-white rounded-full border border-gray-200 hover:border-[#003366] hover:text-[#003366] text-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-[#003366]/20 shadow-md"
-            aria-label="Previous services"
-          >
-            <ChevronLeft className="w-6 h-6" strokeWidth={2.5} />
-          </button>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#001122]/90 via-[#001122]/50 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10 pointer-events-none"></div>
 
-          <style>{`.scrollbar-hide::-webkit-scrollbar { display: none; }`}</style>
-
+      <div className="absolute inset-0 z-20 flex flex-col justify-center px-6 md:px-16 lg:px-24 w-full md:w-2/3 lg:w-1/2">
+        {services.map((svc, idx) => (
           <div
-            ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-6 pb-8 pt-4 px-2"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+            key={svc.id}
+            className={`transition-all duration-700 absolute top-1/2 left-6 md:left-16 lg:left-24 right-6 md:right-0 ${
+              idx === activeIndex 
+                ? 'opacity-100 translate-y-[-50%]' 
+                : 'opacity-0 translate-y-[-40%] pointer-events-none'
+            }`}
           >
-            {services.map((svc, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333333%-16px)] snap-start flex flex-col relative group bg-white border-2 border-lime-500 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg transition-all"
-              >
-                <div className="mb-6">
-                  <div className={`inline-flex p-3 rounded-xl ${svc.bg} transition-transform group-hover:-translate-y-1 duration-300 shadow-sm`}>
-                    <svc.icon className={`w-8 h-8 ${svc.color}`} strokeWidth={1.5} />
-                  </div>
-                </div>
-
-                <div className="relative pl-4 mb-4">
-                  <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-[3px] h-6 ${svc.bar} rounded-r`}></div>
-                  <h3 className="text-2xl font-bebas text-gray-900 leading-snug pr-2 uppercase">
-                    {svc.title}
-                  </h3>
-                </div>
-
-                <p className="text-gray-500 leading-relaxed mb-8 flex-1">
-                  {svc.description}
-                </p>
-
-                <div className="mt-auto">
-                  <button className="w-full bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-wide text-sm transition-colors shadow-sm">
-                    Explore
-                  </button>
-                </div>
-              </div>
-            ))}
+            <div className="text-xs font-bold tracking-[0.2em] text-gray-300 uppercase mb-4">
+              {svc.category}
+            </div>
+            
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 tracking-tight">
+              <span className="text-white">{svc.titleHighlight}</span> {svc.titleRest}
+            </h2>
+            
+            <p className="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl font-medium drop-shadow-md">
+              {svc.description}
+            </p>
           </div>
+        ))}
+      </div>
 
-          <button
-            onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-white rounded-full border border-gray-200 hover:border-[#003366] hover:text-[#003366] text-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-[#003366]/20 shadow-md"
-            aria-label="Next services"
-          >
-            <ChevronRight className="w-6 h-6" strokeWidth={2.5} />
-          </button>
+      <div className="absolute bottom-8 left-0 w-full px-6 md:px-16 lg:px-24 z-30">
+        <style>{`.scrollbar-hide::-webkit-scrollbar { display: none; }`}</style>
+        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}>
+          {services.map((svc, idx) => (
+            <div
+              key={svc.id}
+              onClick={() => setActiveIndex(idx)}
+              className={`relative w-48 md:w-64 h-28 md:h-36 shrink-0 cursor-pointer snap-start transition-all duration-300 overflow-hidden bg-gray-900 ${
+                idx === activeIndex
+                  ? 'border-[3px] border-[#005599] shadow-[0_0_25px_rgba(0,85,153,0.6)] transform scale-105'
+                  : 'border-[3px] border-transparent opacity-60 hover:opacity-100'
+              }`}
+            >
+              <img src={svc.bgImage} alt={svc.titleHighlight} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div className="absolute bottom-3 left-4 right-4 text-white text-xs md:text-sm font-semibold leading-snug drop-shadow-lg">
+                {svc.titleHighlight} {svc.titleRest}
+              </div>
+            </div>
+          ))}
         </div>
-
-        <div className="flex md:hidden justify-center gap-4 mt-2">
-          <button
-            onClick={() => scroll('left')}
-            className="p-3 rounded-full border border-gray-200 text-gray-400 hover:bg-gray-50 transition-colors shadow-sm bg-white"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={() => scroll('right')}
-            className="p-3 rounded-full border border-gray-200 text-gray-400 hover:bg-gray-50 transition-colors shadow-sm bg-white"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-        </div>
-
       </div>
     </section>
   );

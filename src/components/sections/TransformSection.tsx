@@ -139,14 +139,13 @@ const TransformSection = () => {
             }
           `}</style>
 
-          <h2 className="text-4xl md:text-5xl font-bebas text-[#003366] mb-4 uppercase">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#003366] mb-4 tracking-tight">
             How We Transform <span className="text-lime-500">Your Business</span>
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto mb-12">
             Our solutions combine technology, automation, and industry expertise to help organizations modernize operations and accelerate digital growth.
           </p>
 
-          {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
             {tabs.map(tab => (
               <button
@@ -163,10 +162,9 @@ const TransformSection = () => {
             ))}
           </div>
 
-          {/* Content Area */}
           <div className="flex flex-col md:flex-row gap-12 text-left items-center min-h-[400px]">
             <div key={`text-${activeTab}`} className="w-full md:w-1/2 space-y-6 order-2 md:order-1">
-              <h3 className="text-2xl md:text-3xl font-bebas text-[#003366] animate-slide-left leading-snug uppercase" style={{ animationDelay: '0ms' }}>
+              <h3 className="text-2xl md:text-3xl font-bold text-[#003366] animate-slide-left leading-snug" style={{ animationDelay: '0ms' }}>
                 <span className="bg-lime-200/80 px-3 py-1.5 rounded-lg border-l-4 border-lime-500 inline-block shadow-sm">
                   {currentContent.title}
                 </span>
@@ -198,7 +196,6 @@ const TransformSection = () => {
               </div>
             </div>
 
-            {/* Video Area */}
             <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden shadow-xl h-64 md:h-96 order-1 md:order-2">
               <video 
                 key={`vid-${currentContent.video}`} 
