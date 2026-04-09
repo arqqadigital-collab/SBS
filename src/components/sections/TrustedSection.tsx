@@ -101,8 +101,8 @@ const TrustedSection = () => (
     `}</style>
     
     <div className="max-w-6xl mx-auto text-center px-6 md:px-16 lg:px-24 mb-12">
-      <h2 className="text-4xl md:text-5xl font-bebas text-[#003366] mb-4 uppercase">
-        Trusted by <br/>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-[#003366] mb-4 tracking-tight">
+        Trusted By <br/>
         <span className="text-lime-500">Leading Organizations</span>
       </h2>
       <p className="text-gray-500 max-w-3xl mx-auto">
@@ -110,7 +110,6 @@ const TrustedSection = () => (
       </p>
     </div>
     
-    {/* Clients Row */}
     <div className="mb-24">
       <h3 className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Clients</h3>
       <div className="w-full relative">
@@ -142,7 +141,6 @@ const TrustedSection = () => (
       </div>
     </div>
 
-    {/* Stats Box */}
     <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 relative z-20">
       <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] p-10 md:p-14 flex flex-col md:flex-row justify-around gap-12 text-center border-2 border-lime-500">
         <div>
@@ -168,7 +166,6 @@ const TrustedSection = () => (
       </div>
     </div>
 
-    {/* Partners Row */}
     <div className="mt-24">
       <h3 className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Partners</h3>
       <div className="w-full relative">

@@ -21,7 +21,7 @@ const CTABannerSection = () => (
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20 relative z-10">
       
       <div className="w-full md:w-1/2 text-center md:text-left space-y-6 order-2 md:order-1">
-        <h2 className="text-5xl md:text-6xl font-bebas text-white uppercase tracking-widest leading-tight">
+        <h2 className="text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
           Ready To <span className="text-lime-400">Evolve?</span>
         </h2>
         <p className="text-blue-100 font-medium text-lg leading-relaxed max-w-lg mx-auto md:mx-0">

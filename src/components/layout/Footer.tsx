@@ -5,7 +5,7 @@ const Footer = () => (
       <div className="space-y-4 lg:col-span-1">
         <div className="mb-6">
           <img 
-            src="https://res.cloudinary.com/dcjufshrh/image/upload/v1771751101/Logo_aia3du.png" 
+            src="https://res.cloudinary.com/djxcjlhtn/image/upload/v1775654798/logo_2_r7esef.png" 
             alt="TechSync Logo" 
             className="h-16 object-contain" 
           />
