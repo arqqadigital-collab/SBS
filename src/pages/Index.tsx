@@ -3,6 +3,7 @@ import ExpertiseSection from '@/components/sections/ExpertiseSection';
 import TransformSection from '@/components/sections/TransformSection';
 import DeliverSection from '@/components/sections/DeliverSection';
 import ServicesSection from '@/components/sections/ServicesSection';
+import ProcessSection from '@/components/sections/ProcessSection';
 import TrustedSection from '@/components/sections/TrustedSection';
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
 import CTABannerSection from '@/components/sections/CTABannerSection';
@@ -16,6 +17,7 @@ const Index = () => (
     <TransformSection />
     <DeliverSection />
     <ServicesSection />
+    <ProcessSection />
     <TrustedSection />
     <CaseStudiesSection />
     <CTABannerSection />
