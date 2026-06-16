@@ -20,14 +20,17 @@ import {
   CreditCard,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import rcmHeroVideo from "@/assets/rcm/rcm-hero.mp4.asset.json";
-import hisVideo from "@/assets/rcm/his-video.mp4.asset.json";
+import rcmHeroVideoSrc from "@/assets/rcm/rcm-hero.mp4";
+const rcmHeroVideo = { url: rcmHeroVideoSrc };
+import hisVideoSrc from "@/assets/rcm/his-video.mp4";
+const hisVideo = { url: hisVideoSrc };
 import rcmProblem1 from "@/assets/rcm/problem-1.jpg";
 
 import rcmProblem3 from "@/assets/rcm/problem-3.jpg";
 import rcmProblem4 from "@/assets/rcm/problem-4.jpg";
 import rcmProblem5 from "@/assets/rcm/problem-5.jpg";
-import rcmProblem2Real from "@/assets/rcm/rcm-problem-2-real.png.asset.json";
+import rcmProblem2RealSrc from "@/assets/rcm/rcm-problem-2-real.png";
+const rcmProblem2Real = { url: rcmProblem2RealSrc };
 import rcmJourney1 from "@/assets/rcm/journey-1.jpg";
 import rcmJourney2 from "@/assets/rcm/journey-2.jpg";
 import rcmJourney3 from "@/assets/rcm/journey-3.jpg";

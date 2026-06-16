@@ -20,23 +20,31 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import dentalHeroVideo from "@/assets/dental/dental-hero.mp4.asset.json";
+import dentalHeroVideoSrc from "@/assets/dental/dental-hero.mp4";
+const dentalHeroVideo = { url: dentalHeroVideoSrc };
 import problem1 from "@/assets/dental/problem-1.jpg";
 import problem2 from "@/assets/dental/problem-2.jpg";
 import problem3 from "@/assets/dental/problem-3.jpg";
 import problem4 from "@/assets/dental/problem-4.jpg";
 import problem5 from "@/assets/dental/problem-5.jpg";
 import problem6 from "@/assets/dental/problem-6.jpg";
-import preVisitOnlineBooking from "@/assets/dental/journey/pre-visit-online-booking.png.asset.json";
-import checkInReception from "@/assets/dental/journey/check-in-reception.png.asset.json";
-import examinationCharting from "@/assets/dental/journey/examination-charting.png.asset.json";
-import treatmentPlanApproval from "@/assets/dental/journey/treatment-plan-approval.png.asset.json";
-import treatmentDeliveredDocumented from "@/assets/dental/journey/treatment-delivered-documented.png.asset.json";
-import claimPaymentRecallSet from "@/assets/dental/journey/claim-payment-recall-set.png.asset.json";
+import preVisitOnlineBookingSrc from "@/assets/dental/journey/pre-visit-online-booking.png";
+const preVisitOnlineBooking = { url: preVisitOnlineBookingSrc };
+import checkInReceptionSrc from "@/assets/dental/journey/check-in-reception.png";
+const checkInReception = { url: checkInReceptionSrc };
+import examinationChartingSrc from "@/assets/dental/journey/examination-charting.png";
+const examinationCharting = { url: examinationChartingSrc };
+import treatmentPlanApprovalSrc from "@/assets/dental/journey/treatment-plan-approval.png";
+const treatmentPlanApproval = { url: treatmentPlanApprovalSrc };
+import treatmentDeliveredDocumentedSrc from "@/assets/dental/journey/treatment-delivered-documented.png";
+const treatmentDeliveredDocumented = { url: treatmentDeliveredDocumentedSrc };
+import claimPaymentRecallSetSrc from "@/assets/dental/journey/claim-payment-recall-set.png";
+const claimPaymentRecallSet = { url: claimPaymentRecallSetSrc };
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
 import { MainNav } from "@/components/MainNav";
-import dentalCtaVideo from "@/assets/dental/dental-cta.mp4.asset.json";
+import dentalCtaVideoSrc from "@/assets/dental/dental-cta.mp4";
+const dentalCtaVideo = { url: dentalCtaVideoSrc };
 
 function AnimatedStat({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);

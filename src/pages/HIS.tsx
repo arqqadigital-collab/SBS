@@ -31,15 +31,24 @@ import {
   Network,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import hisHeroVideo from "@/assets/his-hero.mp4.asset.json";
-import hisCtaVideo from "@/assets/his-cta.mp4.asset.json";
-import bgStepsLight from "@/assets/bg-steps-light.png.asset.json";
-import registrationStep from "@/assets/his-journey/registration.png.asset.json";
-import outpatientConsultationStep from "@/assets/his-journey/outpatient-consultation.png.asset.json";
-import admissionStep from "@/assets/his-journey/admission.png.asset.json";
-import inpatientCareStep from "@/assets/his-journey/inpatient-care.png.asset.json";
-import dischargeStep from "@/assets/his-journey/discharge.png.asset.json";
-import billingSettlementStep from "@/assets/his-journey/billing-settlement.png.asset.json";
+import hisHeroVideoSrc from "@/assets/his-hero.mp4";
+import hisCtaVideoSrc from "@/assets/his-cta.mp4";
+import bgStepsLightSrc from "@/assets/bg-steps-light.png";
+import registrationStepSrc from "@/assets/his-journey/registration.png";
+import outpatientConsultationStepSrc from "@/assets/his-journey/outpatient-consultation.png";
+import admissionStepSrc from "@/assets/his-journey/admission.png";
+import inpatientCareStepSrc from "@/assets/his-journey/inpatient-care.png";
+import dischargeStepSrc from "@/assets/his-journey/discharge.png";
+import billingSettlementStepSrc from "@/assets/his-journey/billing-settlement.png";
+const hisHeroVideo = { url: hisHeroVideoSrc };
+const hisCtaVideo = { url: hisCtaVideoSrc };
+const bgStepsLight = { url: bgStepsLightSrc };
+const registrationStep = { url: registrationStepSrc };
+const outpatientConsultationStep = { url: outpatientConsultationStepSrc };
+const admissionStep = { url: admissionStepSrc };
+const inpatientCareStep = { url: inpatientCareStepSrc };
+const dischargeStep = { url: dischargeStepSrc };
+const billingSettlementStep = { url: billingSettlementStepSrc };
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
@@ -78,24 +87,24 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-import nphiesLogo from "@/assets/logos/nphies.png.asset.json";
-import malaffiLogo from "@/assets/logos/malaffi.png.asset.json";
-import riayatiLogo from "@/assets/logos/riayati.png.asset.json";
-import zatcaLogo from "@/assets/logos/zatca.png.asset.json";
-import emiratesIdLogo from "@/assets/logos/emirates-id.png.asset.json";
-import absherLogo from "@/assets/logos/absher.png.asset.json";
-import nhraLogo from "@/assets/logos/nhra.png.asset.json";
-import wasfatyLogo from "@/assets/logos/wasfaty.png.asset.json";
+import nphiesLogo from "@/assets/logos/nphies.png";
+import malaffiLogo from "@/assets/logos/malaffi.png";
+import riayatiLogo from "@/assets/logos/riayati.png";
+import zatcaLogo from "@/assets/logos/zatca.png";
+import emiratesIdLogo from "@/assets/logos/emirates-id.png";
+import absherLogo from "@/assets/logos/absher.png";
+import nhraLogo from "@/assets/logos/nhra.png";
+import wasfatyLogo from "@/assets/logos/wasfaty.png";
 
 const nationalPlatforms = [
-  { name: "NPHIES", logo: nphiesLogo.url },
-  { name: "Malaffi", logo: malaffiLogo.url },
-  { name: "Riayati", logo: riayatiLogo.url },
-  { name: "ZATCA Fatoora", logo: zatcaLogo.url },
-  { name: "UAE Emirates ID", logo: emiratesIdLogo.url },
-  { name: "Saudi Absher", logo: absherLogo.url },
-  { name: "Bahrain NHRA", logo: nhraLogo.url },
-  { name: "Wasfaty", logo: wasfatyLogo.url },
+  { name: "NPHIES", logo: nphiesLogo },
+  { name: "Malaffi", logo: malaffiLogo },
+  { name: "Riayati", logo: riayatiLogo },
+  { name: "ZATCA Fatoora", logo: zatcaLogo },
+  { name: "UAE Emirates ID", logo: emiratesIdLogo },
+  { name: "Saudi Absher", logo: absherLogo },
+  { name: "Bahrain NHRA", logo: nhraLogo },
+  { name: "Wasfaty", logo: wasfatyLogo },
 ];
 
 const faqs = [
