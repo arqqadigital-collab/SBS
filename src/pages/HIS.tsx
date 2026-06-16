@@ -31,9 +31,10 @@ import {
   Network,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-// Asset URLs — direct CDN links (no Lovable dependency)
-const hisHeroVideo = { url: "" };
-const hisCtaVideo = { url: "" };
+// Asset URLs
+import hisHeroVideoSrc from "@/assets/his-hero.mp4";
+const hisHeroVideo = { url: hisHeroVideoSrc };
+const hisCtaVideo = { url: hisHeroVideoSrc }; // same video reused for CTA
 const bgStepsLight = { url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=70" };
 const registrationStep = { url: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80" };
 const outpatientConsultationStep = { url: "https://images.unsplash.com/photo-1609882122843-fb05c9e06cf1?w=800&q=80" };
@@ -79,16 +80,16 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-// National platform logos — direct URLs
+// National platform logos — inline SVG (no external dependency)
 const nationalPlatforms = [
-  { name: "NPHIES",          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NPHIES_Logo.png/320px-NPHIES_Logo.png" },
-  { name: "Malaffi",         logo: "https://upload.wikimedia.org/wikipedia/ar/b/b5/Malaffi_Logo.png" },
-  { name: "Riayati",         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Riayati_Logo.png/320px-Riayati_Logo.png" },
-  { name: "ZATCA Fatoora",   logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ZATCA_Logo.svg/320px-ZATCA_Logo.svg.png" },
-  { name: "UAE Emirates ID", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ICP_UAE_Logo.svg/320px-ICP_UAE_Logo.svg.png" },
-  { name: "Saudi Absher",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Absher_logo.png/320px-Absher_logo.png" },
-  { name: "Bahrain NHRA",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/National_Health_Regulatory_Authority_Logo.png/320px-National_Health_Regulatory_Authority_Logo.png" },
-  { name: "Wasfaty",         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Wasfaty_logo.png/320px-Wasfaty_logo.png" },
+  { name: "NPHIES", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwNTY4OSIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPk5QSElFUzwvdGV4dD4KPC9zdmc+" },
+  { name: "Malaffi", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwYjVlMiIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPm1hbGFmZmk8L3RleHQ+Cjwvc3ZnPg==" },
+  { name: "Riayati", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwN2E1MyIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJJQVlBVEk8L3RleHQ+Cjwvc3ZnPg==" },
+  { name: "ZATCA Fatoora", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwNjgzNyIvPiAgPHRleHQgeD0iODAiIHk9IjI4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlpBVENBPC90ZXh0PgogIDx0ZXh0IHg9IjgwIiB5PSI0Ni4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLC1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5GYXRvb3JhPC90ZXh0Pgo8L3N2Zz4=" },
+  { name: "UAE Emirates ID", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwMzA4NyIvPiAgPHRleHQgeD0iODAiIHk9IjI4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPkVtaXJhdGVzPC90ZXh0PgogIDx0ZXh0IHg9IjgwIiB5PSI0Ni4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLC1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5JRDwvdGV4dD4KPC9zdmc+" },
+  { name: "Saudi Absher", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzFiNmIyZiIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPmFic2hlcjwvdGV4dD4KPC9zdmc+" },
+  { name: "Bahrain NHRA", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzhiMDAwMCIvPiAgPHRleHQgeD0iODAiIHk9IjI4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPkJhaHJhaW48L3RleHQ+CiAgPHRleHQgeD0iODAiIHk9IjQ2LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPk5IUkE8L3RleHQ+Cjwvc3ZnPg==" },
+  { name: "Wasfaty", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzFkNGU4ZiIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPldBU0ZBVFk8L3RleHQ+Cjwvc3ZnPg==" },
 ];
 
 const faqs = [
@@ -322,9 +323,7 @@ export default function HIS() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          {hisHeroVideo.url && (
-<video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
-)}
+          <video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
         </div>
 
@@ -642,16 +641,7 @@ export default function HIS() {
       {/* FINAL CTA */}
       <section id="contact" className="relative overflow-hidden px-6 py-24 md:px-12" style={{ backgroundColor: "#091628" }}>
         <div className="absolute inset-0">
-          {hisCtaVideo.url && (
-<video
-            src={hisCtaVideo.url}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="h-full w-full object-cover"
-          />
-)}
+          <video src={hisCtaVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#091628]/85 via-[#091628]/75 to-[#091628]/90" />
         </div>
         <div className="relative mx-auto max-w-4xl text-center">
