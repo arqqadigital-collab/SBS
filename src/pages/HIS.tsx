@@ -29,9 +29,9 @@ import {
   Network,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import hisHeroVideo from "@/assets/his-hero.mp4.asset.json";
-import hisCtaVideo from "@/assets/his-cta.mp4.asset.json";
-import bgStepsLight from "@/assets/bg-steps-light.png.asset.json";
+const hisHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/bb29083f-6ab8-459b-93ce-ad77bd93a561/his-hero.mp4" };
+const hisCtaVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/22a784dd-4013-4cd1-86ed-dc4a8380e187/his-cta.mp4" };
+const bgStepsLight = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/089894e9-80a4-4e58-b530-69f35466f56e/bg-steps-light.png" };
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
