@@ -20,14 +20,13 @@ import {
   CreditCard,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-const rcmHeroVideo = { url: "" }; // video replaced — upload your video directly
-const hisVideo = { url: "" }; // video replaced — upload your video directly
+import rcmHeroVideo from "@/assets/header-bg.mp4";
+import hisVideo from "@/assets/about-hero.mp4";
 import rcmProblem1 from "@/assets/rcm/problem-1.jpg";
-
+import rcmProblem2 from "@/assets/rcm/problem-2.jpg";
 import rcmProblem3 from "@/assets/rcm/problem-3.jpg";
 import rcmProblem4 from "@/assets/rcm/problem-4.jpg";
 import rcmProblem5 from "@/assets/rcm/problem-5.jpg";
-const rcmProblem2Real = { url: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80" };
 import rcmJourney1 from "@/assets/rcm/journey-1.jpg";
 import rcmJourney2 from "@/assets/rcm/journey-2.jpg";
 import rcmJourney3 from "@/assets/rcm/journey-3.jpg";
@@ -72,7 +71,7 @@ const stats = [
 
 const problemCards = [
   { title: "Rejected Claims", image: rcmProblem1, body: "Claims submitted with incorrect or missing diagnosis codes, procedure codes, or documentation — rejected by payers with no obligation to explain how to fix them." },
-  { title: "Missed Charges", image: rcmProblem2Real.url, body: "Charges for procedures, medications, and bedside investigations never captured in billing because no one manually entered them and no automated capture exists." },
+  { title: "Missed Charges", image: rcmProblem2, body: "Charges for procedures, medications, and bedside investigations never captured in billing because no one manually entered them and no automated capture exists." },
   { title: "Expired Authorizations", image: rcmProblem3, body: "Prior authorizations expire before the procedure is performed, claims are submitted without a valid auth, and the payer denies on a technicality that should never have arisen." },
   { title: "Reactive Denial Management", image: rcmProblem4, body: "Denials sit in a queue, get worked weeks later, some are resubmitted, many are written off because the appeal window has already closed." },
   { title: "Monthly-in-Arrears Reporting", image: rcmProblem5, body: "By the time leadership sees a revenue problem in the data, the causes are weeks old and the financial impact has already accumulated." },
@@ -200,16 +199,14 @@ export default function RCM() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          {rcmHeroVideo.url && (
-<video
-            src={rcmHeroVideo.url}
+          <video
+            src={rcmHeroVideo}
             autoPlay
             muted
             loop
             playsInline
             className="h-full w-full object-cover"
           />
-)}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
         </div>
 
@@ -532,16 +529,14 @@ export default function RCM() {
         style={{ backgroundColor: "#091628" }}
       >
         <div className="absolute inset-0">
-          {hisVideo.url && (
-<video
-            src={hisVideo.url}
+          <video
+            src={hisVideo}
             autoPlay
             muted
             loop
             playsInline
             className="h-full w-full object-cover opacity-70"
           />
-)}
           <div
             className="absolute inset-0 opacity-40"
             style={{ background: "radial-gradient(circle at 30% 30%, rgba(56,189,248,0.25), transparent 55%), radial-gradient(circle at 70% 70%, rgba(99,102,241,0.3), transparent 55%)" }}

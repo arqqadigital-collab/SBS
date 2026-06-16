@@ -31,17 +31,9 @@ import {
   Network,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-// Asset URLs
-import hisHeroVideoSrc from "@/assets/his-hero.mp4";
-const hisHeroVideo = { url: hisHeroVideoSrc };
-const hisCtaVideo = { url: hisHeroVideoSrc }; // same video reused for CTA
-const bgStepsLight = { url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=70" };
-const registrationStep = { url: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80" };
-const outpatientConsultationStep = { url: "https://images.unsplash.com/photo-1609882122843-fb05c9e06cf1?w=800&q=80" };
-const admissionStep = { url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" };
-const inpatientCareStep = { url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" };
-const dischargeStep = { url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" };
-const billingSettlementStep = { url: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80" };
+import hisHeroVideo from "@/assets/header-bg.mp4";
+import hisCtaVideo from "@/assets/about-hero.mp4";
+import bgStepsLight from "@/assets/stats-bg.jpg";
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
@@ -63,12 +55,12 @@ const features = [
 ];
 
 const journey = [
-  { icon: UserPlus, title: "Registration", image: registrationStep.url, body: "Patient registered with verified identity and complete demographics. A unique master record is created or retrieved. Duplicate detection prevents fragmented histories." },
-  { icon: CalendarCheck, title: "Outpatient Consultation", image: outpatientConsultationStep.url, body: "Appointment conducted with full clinical history visible. The physician documents, orders, prescribes and refers — all in one screen, all in one workflow." },
-  { icon: BedDouble, title: "Admission", image: admissionStep.url, body: "If admission is required, the patient moves from outpatient directly into inpatient workflow. Bed assignment, assessment, reconciliation and nursing documentation begin immediately." },
-  { icon: HeartPulse, title: "Inpatient Care", image: inpatientCareStep.url, body: "Every clinical event — rounds, assessments, investigations, procedures, medications, transfers — is documented in the unified record with continuous decision support." },
-  { icon: FileText, title: "Discharge", image: dischargeStep.url, body: "Discharge planning begins at admission. The summary is generated from structured data. Medications are reconciled and follow-up appointments booked through the patient portal." },
-  { icon: Receipt, title: "Billing & Settlement", image: billingSettlementStep.url, body: "All clinical activity is captured automatically. Bills are generated from the clinical record, claims submitted electronically and payment reconciled — closing the financial and clinical record together." },
+  { icon: UserPlus, title: "Registration", image: problem1, body: "Patient registered with verified identity and complete demographics. A unique master record is created or retrieved. Duplicate detection prevents fragmented histories." },
+  { icon: CalendarCheck, title: "Outpatient Consultation", image: problem2, body: "Appointment conducted with full clinical history visible. The physician documents, orders, prescribes and refers — all in one screen, all in one workflow." },
+  { icon: BedDouble, title: "Admission", image: problem3, body: "If admission is required, the patient moves from outpatient directly into inpatient workflow. Bed assignment, assessment, reconciliation and nursing documentation begin immediately." },
+  { icon: HeartPulse, title: "Inpatient Care", image: problem4, body: "Every clinical event — rounds, assessments, investigations, procedures, medications, transfers — is documented in the unified record with continuous decision support." },
+  { icon: FileText, title: "Discharge", image: problem5, body: "Discharge planning begins at admission. The summary is generated from structured data. Medications are reconciled and follow-up appointments booked through the patient portal." },
+  { icon: Receipt, title: "Billing & Settlement", image: problem6, body: "All clinical activity is captured automatically. Bills are generated from the clinical record, claims submitted electronically and payment reconciled — closing the financial and clinical record together." },
 ];
 
 const stats = [
@@ -80,16 +72,24 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-// National platform logos — inline SVG (no external dependency)
+import nphiesLogo from "@/assets/partners/01.png";
+import malaffiLogo from "@/assets/partners/02.png";
+import riayatiLogo from "@/assets/partners/03.png";
+import zatcaLogo from "@/assets/partners/04.png";
+import emiratesIdLogo from "@/assets/partners/05.png";
+import absherLogo from "@/assets/partners/06.png";
+import nhraLogo from "@/assets/partners/07.png";
+import wasfatyLogo from "@/assets/partners/08.png";
+
 const nationalPlatforms = [
-  { name: "NPHIES", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwNTY4OSIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPk5QSElFUzwvdGV4dD4KPC9zdmc+" },
-  { name: "Malaffi", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwYjVlMiIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPm1hbGFmZmk8L3RleHQ+Cjwvc3ZnPg==" },
-  { name: "Riayati", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwN2E1MyIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJJQVlBVEk8L3RleHQ+Cjwvc3ZnPg==" },
-  { name: "ZATCA Fatoora", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwNjgzNyIvPiAgPHRleHQgeD0iODAiIHk9IjI4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlpBVENBPC90ZXh0PgogIDx0ZXh0IHg9IjgwIiB5PSI0Ni4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLC1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5GYXRvb3JhPC90ZXh0Pgo8L3N2Zz4=" },
-  { name: "UAE Emirates ID", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzAwMzA4NyIvPiAgPHRleHQgeD0iODAiIHk9IjI4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPkVtaXJhdGVzPC90ZXh0PgogIDx0ZXh0IHg9IjgwIiB5PSI0Ni4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic3lzdGVtLXVpLC1hcHBsZS1zeXN0ZW0sc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5JRDwvdGV4dD4KPC9zdmc+" },
-  { name: "Saudi Absher", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzFiNmIyZiIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPmFic2hlcjwvdGV4dD4KPC9zdmc+" },
-  { name: "Bahrain NHRA", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzhiMDAwMCIvPiAgPHRleHQgeD0iODAiIHk9IjI4LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPkJhaHJhaW48L3RleHQ+CiAgPHRleHQgeD0iODAiIHk9IjQ2LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPk5IUkE8L3RleHQ+Cjwvc3ZnPg==" },
-  { name: "Wasfaty", logo: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCAxNjAgNjQiPjxyZWN0IHdpZHRoPSIxNjAiIGhlaWdodD0iNjQiIHJ4PSIxMCIgZmlsbD0iIzFkNGU4ZiIvPiAgPHRleHQgeD0iODAiIHk9IjM3LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksLWFwcGxlLXN5c3RlbSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPldBU0ZBVFk8L3RleHQ+Cjwvc3ZnPg==" },
+  { name: "NPHIES", logo: nphiesLogo },
+  { name: "Malaffi", logo: malaffiLogo },
+  { name: "Riayati", logo: riayatiLogo },
+  { name: "ZATCA Fatoora", logo: zatcaLogo },
+  { name: "UAE Emirates ID", logo: emiratesIdLogo },
+  { name: "Saudi Absher", logo: absherLogo },
+  { name: "Bahrain NHRA", logo: nhraLogo },
+  { name: "Wasfaty", logo: wasfatyLogo },
 ];
 
 const faqs = [
@@ -323,7 +323,7 @@ export default function HIS() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          <video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+          <video src={hisHeroVideo} autoPlay muted loop playsInline className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
         </div>
 
@@ -523,7 +523,7 @@ export default function HIS() {
       <section
         className="relative px-6 py-24 md:px-12"
         style={{
-          backgroundImage: `url(${bgStepsLight.url})`,
+          backgroundImage: `url(${bgStepsLight})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -641,7 +641,14 @@ export default function HIS() {
       {/* FINAL CTA */}
       <section id="contact" className="relative overflow-hidden px-6 py-24 md:px-12" style={{ backgroundColor: "#091628" }}>
         <div className="absolute inset-0">
-          <video src={hisCtaVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+          <video
+            src={hisCtaVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-[#091628]/85 via-[#091628]/75 to-[#091628]/90" />
         </div>
         <div className="relative mx-auto max-w-4xl text-center">

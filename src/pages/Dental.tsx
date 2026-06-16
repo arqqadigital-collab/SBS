@@ -20,23 +20,17 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-const dentalHeroVideo = { url: "" }; // video replaced — upload your video directly
+import dentalHeroVideo from "@/assets/header-bg.mp4";
 import problem1 from "@/assets/dental/problem-1.jpg";
 import problem2 from "@/assets/dental/problem-2.jpg";
 import problem3 from "@/assets/dental/problem-3.jpg";
 import problem4 from "@/assets/dental/problem-4.jpg";
 import problem5 from "@/assets/dental/problem-5.jpg";
 import problem6 from "@/assets/dental/problem-6.jpg";
-const preVisitOnlineBooking = { url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" };
-const checkInReception = { url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80" };
-const examinationCharting = { url: "https://images.unsplash.com/photo-1588776814546-1ffedbe47425?w=800&q=80" };
-const treatmentPlanApproval = { url: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80" };
-const treatmentDeliveredDocumented = { url: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80" };
-const claimPaymentRecallSet = { url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" };
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
 import { MainNav } from "@/components/MainNav";
-const dentalCtaVideo = { url: "" }; // video replaced — upload your video directly
+import dentalCtaVideo from "@/assets/about-hero.mp4";
 
 function AnimatedStat({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -95,12 +89,12 @@ const features = [
 ];
 
 const journey = [
-  { icon: ClipboardList, title: "Pre-Visit & Online Booking", image: preVisitOnlineBooking.url, body: "Patient books online or via reception. Digital medical history, consent, and registration forms are sent and completed before arrival." },
-  { icon: Users, title: "Check-In & Reception", image: checkInReception.url, body: "Patient checks in at reception or self-service kiosk. The record opens with full history, outstanding plan items, recalls, medical alerts, and insurance visible to the team." },
-  { icon: Smile, title: "Examination & Charting", image: examinationCharting.url, body: "Dentist conducts the exam with the digital chart on the chairside screen. Radiographs auto-appear in the record. Clinical photos attach to the relevant teeth." },
-  { icon: FileSignature, title: "Treatment Plan & Approval", image: treatmentPlanApproval.url, body: "A plan is built from the findings. Costs calculate automatically. The patient reviews, asks questions, and approves digitally — a copy is sent immediately." },
-  { icon: CheckCircle2, title: "Treatment Delivered & Documented", image: treatmentDeliveredDocumented.url, body: "Completed procedures are marked on the chart. Structured templates and voice input speed up notes. Post-op instructions are delivered digitally. Charges post automatically." },
-  { icon: Receipt, title: "Claim, Payment & Recall Set", image: claimPaymentRecallSet.url, body: "Insurance claims submitted electronically. Payment processed and receipted. The patient's next recall is scheduled, reminders set, and they leave with a complete record." },
+  { icon: ClipboardList, title: "Pre-Visit & Online Booking", image: problem1, body: "Patient books online or via reception. Digital medical history, consent, and registration forms are sent and completed before arrival." },
+  { icon: Users, title: "Check-In & Reception", image: problem2, body: "Patient checks in at reception or self-service kiosk. The record opens with full history, outstanding plan items, recalls, medical alerts, and insurance visible to the team." },
+  { icon: Smile, title: "Examination & Charting", image: problem3, body: "Dentist conducts the exam with the digital chart on the chairside screen. Radiographs auto-appear in the record. Clinical photos attach to the relevant teeth." },
+  { icon: FileSignature, title: "Treatment Plan & Approval", image: problem4, body: "A plan is built from the findings. Costs calculate automatically. The patient reviews, asks questions, and approves digitally — a copy is sent immediately." },
+  { icon: CheckCircle2, title: "Treatment Delivered & Documented", image: problem5, body: "Completed procedures are marked on the chart. Structured templates and voice input speed up notes. Post-op instructions are delivered digitally. Charges post automatically." },
+  { icon: Receipt, title: "Claim, Payment & Recall Set", image: problem6, body: "Insurance claims submitted electronically. Payment processed and receipted. The patient's next recall is scheduled, reminders set, and they leave with a complete record." },
 ];
 
 const stats = [
@@ -217,16 +211,14 @@ export default function Dental() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-[var(--brand-dark)]">
         <div className="absolute inset-0">
-          {dentalHeroVideo.url && (
-<video
-            src={dentalHeroVideo.url}
+          <video
+            src={dentalHeroVideo}
             autoPlay
             muted
             loop
             playsInline
             className="h-full w-full object-cover"
           />
-)}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
         </div>
         <div className="relative z-10 flex min-h-[90vh] flex-col">
@@ -511,16 +503,14 @@ export default function Dental() {
         style={{ backgroundColor: "#091628" }}
       >
         <div className="absolute inset-0">
-          {dentalCtaVideo.url && (
-<video
-            src={dentalCtaVideo.url}
+          <video
+            src={dentalCtaVideo}
             autoPlay
             muted
             loop
             playsInline
             className="h-full w-full object-cover"
           />
-)}
           <div className="absolute inset-0 bg-gradient-to-b from-[#091628]/85 via-[#091628]/75 to-[#091628]/90" />
         </div>
         <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-brand)", mixBlendMode: "soft-light" }} />
