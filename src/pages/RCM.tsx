@@ -20,14 +20,14 @@ import {
   CreditCard,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import rcmHeroVideo from "@/assets/rcm/rcm-hero.mp4.asset.json";
-import hisVideo from "@/assets/rcm/his-video.mp4.asset.json";
+const rcmHeroVideo = { url: "" }; // video replaced — upload your video directly
+const hisVideo = { url: "" }; // video replaced — upload your video directly
 import rcmProblem1 from "@/assets/rcm/problem-1.jpg";
 
 import rcmProblem3 from "@/assets/rcm/problem-3.jpg";
 import rcmProblem4 from "@/assets/rcm/problem-4.jpg";
 import rcmProblem5 from "@/assets/rcm/problem-5.jpg";
-import rcmProblem2Real from "@/assets/rcm/rcm-problem-2-real.png.asset.json";
+const rcmProblem2Real = { url: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80" };
 import rcmJourney1 from "@/assets/rcm/journey-1.jpg";
 import rcmJourney2 from "@/assets/rcm/journey-2.jpg";
 import rcmJourney3 from "@/assets/rcm/journey-3.jpg";
@@ -200,7 +200,8 @@ export default function RCM() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          <video
+          {rcmHeroVideo.url && (
+<video
             src={rcmHeroVideo.url}
             autoPlay
             muted
@@ -208,6 +209,7 @@ export default function RCM() {
             playsInline
             className="h-full w-full object-cover"
           />
+)}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
         </div>
 
@@ -530,7 +532,8 @@ export default function RCM() {
         style={{ backgroundColor: "#091628" }}
       >
         <div className="absolute inset-0">
-          <video
+          {hisVideo.url && (
+<video
             src={hisVideo.url}
             autoPlay
             muted
@@ -538,6 +541,7 @@ export default function RCM() {
             playsInline
             className="h-full w-full object-cover opacity-70"
           />
+)}
           <div
             className="absolute inset-0 opacity-40"
             style={{ background: "radial-gradient(circle at 30% 30%, rgba(56,189,248,0.25), transparent 55%), radial-gradient(circle at 70% 70%, rgba(99,102,241,0.3), transparent 55%)" }}

@@ -19,16 +19,14 @@ import {
   TrendingUp,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import lisHeroVideo from "@/assets/lis/lis-hero.mp4.asset.json";
+const lisHeroVideo = { url: "" }; // video replaced — upload your video directly
 import lisProblem1 from "@/assets/lis/problem-1.jpg";
 import lisProblem2 from "@/assets/lis/problem-2.jpg";
 import lisProblem3 from "@/assets/lis/problem-3.jpg";
 import lisProblem4 from "@/assets/lis/problem-4.jpg";
 import lisJourney1 from "@/assets/lis/journey-1.jpg";
-import lisJourney2Asset from "@/assets/lis/journey-2.png.asset.json";
-import lisJourney3Asset from "@/assets/lis/journey-3.png.asset.json";
-const lisJourney2 = lisJourney2Asset.url;
-const lisJourney3 = lisJourney3Asset.url;
+const lisJourney2 = "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&q=80";
+const lisJourney3 = "https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=800&q=80";
 import lisJourney4 from "@/assets/lis/journey-4.jpg";
 
 import { Footer } from "@/components/Footer";
@@ -185,7 +183,8 @@ export default function LIS() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          <video
+          {lisHeroVideo.url && (
+<video
             src={lisHeroVideo.url}
             autoPlay
             muted
@@ -193,6 +192,7 @@ export default function LIS() {
             playsInline
             className="h-full w-full object-cover"
           />
+)}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
         </div>
 

@@ -20,23 +20,23 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import dentalHeroVideo from "@/assets/dental/dental-hero.mp4.asset.json";
+const dentalHeroVideo = { url: "" }; // video replaced — upload your video directly
 import problem1 from "@/assets/dental/problem-1.jpg";
 import problem2 from "@/assets/dental/problem-2.jpg";
 import problem3 from "@/assets/dental/problem-3.jpg";
 import problem4 from "@/assets/dental/problem-4.jpg";
 import problem5 from "@/assets/dental/problem-5.jpg";
 import problem6 from "@/assets/dental/problem-6.jpg";
-import preVisitOnlineBooking from "@/assets/dental/journey/pre-visit-online-booking.png.asset.json";
-import checkInReception from "@/assets/dental/journey/check-in-reception.png.asset.json";
-import examinationCharting from "@/assets/dental/journey/examination-charting.png.asset.json";
-import treatmentPlanApproval from "@/assets/dental/journey/treatment-plan-approval.png.asset.json";
-import treatmentDeliveredDocumented from "@/assets/dental/journey/treatment-delivered-documented.png.asset.json";
-import claimPaymentRecallSet from "@/assets/dental/journey/claim-payment-recall-set.png.asset.json";
+const preVisitOnlineBooking = { url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" };
+const checkInReception = { url: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&q=80" };
+const examinationCharting = { url: "https://images.unsplash.com/photo-1588776814546-1ffedbe47425?w=800&q=80" };
+const treatmentPlanApproval = { url: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80" };
+const treatmentDeliveredDocumented = { url: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80" };
+const claimPaymentRecallSet = { url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" };
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
 import { MainNav } from "@/components/MainNav";
-import dentalCtaVideo from "@/assets/dental/dental-cta.mp4.asset.json";
+const dentalCtaVideo = { url: "" }; // video replaced — upload your video directly
 
 function AnimatedStat({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -217,7 +217,8 @@ export default function Dental() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-[var(--brand-dark)]">
         <div className="absolute inset-0">
-          <video
+          {dentalHeroVideo.url && (
+<video
             src={dentalHeroVideo.url}
             autoPlay
             muted
@@ -225,6 +226,7 @@ export default function Dental() {
             playsInline
             className="h-full w-full object-cover"
           />
+)}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/85" />
         </div>
         <div className="relative z-10 flex min-h-[90vh] flex-col">
@@ -509,7 +511,8 @@ export default function Dental() {
         style={{ backgroundColor: "#091628" }}
       >
         <div className="absolute inset-0">
-          <video
+          {dentalCtaVideo.url && (
+<video
             src={dentalCtaVideo.url}
             autoPlay
             muted
@@ -517,6 +520,7 @@ export default function Dental() {
             playsInline
             className="h-full w-full object-cover"
           />
+)}
           <div className="absolute inset-0 bg-gradient-to-b from-[#091628]/85 via-[#091628]/75 to-[#091628]/90" />
         </div>
         <div className="absolute inset-0 opacity-30" style={{ background: "var(--gradient-brand)", mixBlendMode: "soft-light" }} />

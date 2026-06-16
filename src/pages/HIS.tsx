@@ -31,15 +31,16 @@ import {
   Network,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import hisHeroVideo from "@/assets/his-hero.mp4.asset.json";
-import hisCtaVideo from "@/assets/his-cta.mp4.asset.json";
-import bgStepsLight from "@/assets/bg-steps-light.png.asset.json";
-import registrationStep from "@/assets/his-journey/registration.png.asset.json";
-import outpatientConsultationStep from "@/assets/his-journey/outpatient-consultation.png.asset.json";
-import admissionStep from "@/assets/his-journey/admission.png.asset.json";
-import inpatientCareStep from "@/assets/his-journey/inpatient-care.png.asset.json";
-import dischargeStep from "@/assets/his-journey/discharge.png.asset.json";
-import billingSettlementStep from "@/assets/his-journey/billing-settlement.png.asset.json";
+// Asset URLs — direct CDN links (no Lovable dependency)
+const hisHeroVideo = { url: "" };
+const hisCtaVideo = { url: "" };
+const bgStepsLight = { url: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=70" };
+const registrationStep = { url: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80" };
+const outpatientConsultationStep = { url: "https://images.unsplash.com/photo-1609882122843-fb05c9e06cf1?w=800&q=80" };
+const admissionStep = { url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" };
+const inpatientCareStep = { url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80" };
+const dischargeStep = { url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" };
+const billingSettlementStep = { url: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80" };
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
@@ -78,24 +79,16 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-import nphiesLogo from "@/assets/logos/nphies.png.asset.json";
-import malaffiLogo from "@/assets/logos/malaffi.png.asset.json";
-import riayatiLogo from "@/assets/logos/riayati.png.asset.json";
-import zatcaLogo from "@/assets/logos/zatca.png.asset.json";
-import emiratesIdLogo from "@/assets/logos/emirates-id.png.asset.json";
-import absherLogo from "@/assets/logos/absher.png.asset.json";
-import nhraLogo from "@/assets/logos/nhra.png.asset.json";
-import wasfatyLogo from "@/assets/logos/wasfaty.png.asset.json";
-
+// National platform logos — direct URLs
 const nationalPlatforms = [
-  { name: "NPHIES", logo: nphiesLogo.url },
-  { name: "Malaffi", logo: malaffiLogo.url },
-  { name: "Riayati", logo: riayatiLogo.url },
-  { name: "ZATCA Fatoora", logo: zatcaLogo.url },
-  { name: "UAE Emirates ID", logo: emiratesIdLogo.url },
-  { name: "Saudi Absher", logo: absherLogo.url },
-  { name: "Bahrain NHRA", logo: nhraLogo.url },
-  { name: "Wasfaty", logo: wasfatyLogo.url },
+  { name: "NPHIES",          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/NPHIES_Logo.png/320px-NPHIES_Logo.png" },
+  { name: "Malaffi",         logo: "https://upload.wikimedia.org/wikipedia/ar/b/b5/Malaffi_Logo.png" },
+  { name: "Riayati",         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Riayati_Logo.png/320px-Riayati_Logo.png" },
+  { name: "ZATCA Fatoora",   logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/ZATCA_Logo.svg/320px-ZATCA_Logo.svg.png" },
+  { name: "UAE Emirates ID", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ICP_UAE_Logo.svg/320px-ICP_UAE_Logo.svg.png" },
+  { name: "Saudi Absher",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Absher_logo.png/320px-Absher_logo.png" },
+  { name: "Bahrain NHRA",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/National_Health_Regulatory_Authority_Logo.png/320px-National_Health_Regulatory_Authority_Logo.png" },
+  { name: "Wasfaty",         logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Wasfaty_logo.png/320px-Wasfaty_logo.png" },
 ];
 
 const faqs = [
@@ -329,7 +322,9 @@ export default function HIS() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          <video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+          {hisHeroVideo.url && (
+<video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+)}
           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
         </div>
 
@@ -647,7 +642,8 @@ export default function HIS() {
       {/* FINAL CTA */}
       <section id="contact" className="relative overflow-hidden px-6 py-24 md:px-12" style={{ backgroundColor: "#091628" }}>
         <div className="absolute inset-0">
-          <video
+          {hisCtaVideo.url && (
+<video
             src={hisCtaVideo.url}
             autoPlay
             muted
@@ -655,6 +651,7 @@ export default function HIS() {
             playsInline
             className="h-full w-full object-cover"
           />
+)}
           <div className="absolute inset-0 bg-gradient-to-b from-[#091628]/85 via-[#091628]/75 to-[#091628]/90" />
         </div>
         <div className="relative mx-auto max-w-4xl text-center">
