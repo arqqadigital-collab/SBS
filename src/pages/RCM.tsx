@@ -20,13 +20,14 @@ import {
   CreditCard,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import rcmHeroVideo from "@/assets/header-bg.mp4";
-import hisVideo from "@/assets/about-hero.mp4";
+import rcmHeroVideo from "@/assets/rcm/rcm-hero.mp4.asset.json";
+import hisVideo from "@/assets/rcm/his-video.mp4.asset.json";
 import rcmProblem1 from "@/assets/rcm/problem-1.jpg";
-import rcmProblem2 from "@/assets/rcm/problem-2.jpg";
+
 import rcmProblem3 from "@/assets/rcm/problem-3.jpg";
 import rcmProblem4 from "@/assets/rcm/problem-4.jpg";
 import rcmProblem5 from "@/assets/rcm/problem-5.jpg";
+import rcmProblem2Real from "@/assets/rcm/rcm-problem-2-real.png.asset.json";
 import rcmJourney1 from "@/assets/rcm/journey-1.jpg";
 import rcmJourney2 from "@/assets/rcm/journey-2.jpg";
 import rcmJourney3 from "@/assets/rcm/journey-3.jpg";
@@ -71,7 +72,7 @@ const stats = [
 
 const problemCards = [
   { title: "Rejected Claims", image: rcmProblem1, body: "Claims submitted with incorrect or missing diagnosis codes, procedure codes, or documentation — rejected by payers with no obligation to explain how to fix them." },
-  { title: "Missed Charges", image: rcmProblem2, body: "Charges for procedures, medications, and bedside investigations never captured in billing because no one manually entered them and no automated capture exists." },
+  { title: "Missed Charges", image: rcmProblem2Real.url, body: "Charges for procedures, medications, and bedside investigations never captured in billing because no one manually entered them and no automated capture exists." },
   { title: "Expired Authorizations", image: rcmProblem3, body: "Prior authorizations expire before the procedure is performed, claims are submitted without a valid auth, and the payer denies on a technicality that should never have arisen." },
   { title: "Reactive Denial Management", image: rcmProblem4, body: "Denials sit in a queue, get worked weeks later, some are resubmitted, many are written off because the appeal window has already closed." },
   { title: "Monthly-in-Arrears Reporting", image: rcmProblem5, body: "By the time leadership sees a revenue problem in the data, the causes are weeks old and the financial impact has already accumulated." },
@@ -200,7 +201,7 @@ export default function RCM() {
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
           <video
-            src={rcmHeroVideo}
+            src={rcmHeroVideo.url}
             autoPlay
             muted
             loop
@@ -530,7 +531,7 @@ export default function RCM() {
       >
         <div className="absolute inset-0">
           <video
-            src={hisVideo}
+            src={hisVideo.url}
             autoPlay
             muted
             loop

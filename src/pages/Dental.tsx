@@ -20,17 +20,23 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import dentalHeroVideo from "@/assets/header-bg.mp4";
+import dentalHeroVideo from "@/assets/dental/dental-hero.mp4.asset.json";
 import problem1 from "@/assets/dental/problem-1.jpg";
 import problem2 from "@/assets/dental/problem-2.jpg";
 import problem3 from "@/assets/dental/problem-3.jpg";
 import problem4 from "@/assets/dental/problem-4.jpg";
 import problem5 from "@/assets/dental/problem-5.jpg";
 import problem6 from "@/assets/dental/problem-6.jpg";
+import preVisitOnlineBooking from "@/assets/dental/journey/pre-visit-online-booking.png.asset.json";
+import checkInReception from "@/assets/dental/journey/check-in-reception.png.asset.json";
+import examinationCharting from "@/assets/dental/journey/examination-charting.png.asset.json";
+import treatmentPlanApproval from "@/assets/dental/journey/treatment-plan-approval.png.asset.json";
+import treatmentDeliveredDocumented from "@/assets/dental/journey/treatment-delivered-documented.png.asset.json";
+import claimPaymentRecallSet from "@/assets/dental/journey/claim-payment-recall-set.png.asset.json";
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
 import { MainNav } from "@/components/MainNav";
-import dentalCtaVideo from "@/assets/about-hero.mp4";
+import dentalCtaVideo from "@/assets/dental/dental-cta.mp4.asset.json";
 
 function AnimatedStat({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -89,12 +95,12 @@ const features = [
 ];
 
 const journey = [
-  { icon: ClipboardList, title: "Pre-Visit & Online Booking", image: problem1, body: "Patient books online or via reception. Digital medical history, consent, and registration forms are sent and completed before arrival." },
-  { icon: Users, title: "Check-In & Reception", image: problem2, body: "Patient checks in at reception or self-service kiosk. The record opens with full history, outstanding plan items, recalls, medical alerts, and insurance visible to the team." },
-  { icon: Smile, title: "Examination & Charting", image: problem3, body: "Dentist conducts the exam with the digital chart on the chairside screen. Radiographs auto-appear in the record. Clinical photos attach to the relevant teeth." },
-  { icon: FileSignature, title: "Treatment Plan & Approval", image: problem4, body: "A plan is built from the findings. Costs calculate automatically. The patient reviews, asks questions, and approves digitally — a copy is sent immediately." },
-  { icon: CheckCircle2, title: "Treatment Delivered & Documented", image: problem5, body: "Completed procedures are marked on the chart. Structured templates and voice input speed up notes. Post-op instructions are delivered digitally. Charges post automatically." },
-  { icon: Receipt, title: "Claim, Payment & Recall Set", image: problem6, body: "Insurance claims submitted electronically. Payment processed and receipted. The patient's next recall is scheduled, reminders set, and they leave with a complete record." },
+  { icon: ClipboardList, title: "Pre-Visit & Online Booking", image: preVisitOnlineBooking.url, body: "Patient books online or via reception. Digital medical history, consent, and registration forms are sent and completed before arrival." },
+  { icon: Users, title: "Check-In & Reception", image: checkInReception.url, body: "Patient checks in at reception or self-service kiosk. The record opens with full history, outstanding plan items, recalls, medical alerts, and insurance visible to the team." },
+  { icon: Smile, title: "Examination & Charting", image: examinationCharting.url, body: "Dentist conducts the exam with the digital chart on the chairside screen. Radiographs auto-appear in the record. Clinical photos attach to the relevant teeth." },
+  { icon: FileSignature, title: "Treatment Plan & Approval", image: treatmentPlanApproval.url, body: "A plan is built from the findings. Costs calculate automatically. The patient reviews, asks questions, and approves digitally — a copy is sent immediately." },
+  { icon: CheckCircle2, title: "Treatment Delivered & Documented", image: treatmentDeliveredDocumented.url, body: "Completed procedures are marked on the chart. Structured templates and voice input speed up notes. Post-op instructions are delivered digitally. Charges post automatically." },
+  { icon: Receipt, title: "Claim, Payment & Recall Set", image: claimPaymentRecallSet.url, body: "Insurance claims submitted electronically. Payment processed and receipted. The patient's next recall is scheduled, reminders set, and they leave with a complete record." },
 ];
 
 const stats = [
@@ -212,7 +218,7 @@ export default function Dental() {
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-[var(--brand-dark)]">
         <div className="absolute inset-0">
           <video
-            src={dentalHeroVideo}
+            src={dentalHeroVideo.url}
             autoPlay
             muted
             loop
@@ -504,7 +510,7 @@ export default function Dental() {
       >
         <div className="absolute inset-0">
           <video
-            src={dentalCtaVideo}
+            src={dentalCtaVideo.url}
             autoPlay
             muted
             loop

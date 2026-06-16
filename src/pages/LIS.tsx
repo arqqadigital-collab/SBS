@@ -19,14 +19,16 @@ import {
   TrendingUp,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import lisHeroVideo from "@/assets/header-bg.mp4";
+import lisHeroVideo from "@/assets/lis/lis-hero.mp4.asset.json";
 import lisProblem1 from "@/assets/lis/problem-1.jpg";
 import lisProblem2 from "@/assets/lis/problem-2.jpg";
 import lisProblem3 from "@/assets/lis/problem-3.jpg";
 import lisProblem4 from "@/assets/lis/problem-4.jpg";
 import lisJourney1 from "@/assets/lis/journey-1.jpg";
-import lisJourney2 from "@/assets/lis/journey-2.jpg";
-import lisJourney3 from "@/assets/lis/journey-3.jpg";
+import lisJourney2Asset from "@/assets/lis/journey-2.png.asset.json";
+import lisJourney3Asset from "@/assets/lis/journey-3.png.asset.json";
+const lisJourney2 = lisJourney2Asset.url;
+const lisJourney3 = lisJourney3Asset.url;
 import lisJourney4 from "@/assets/lis/journey-4.jpg";
 
 import { Footer } from "@/components/Footer";
@@ -184,7 +186,7 @@ export default function LIS() {
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
           <video
-            src={lisHeroVideo}
+            src={lisHeroVideo.url}
             autoPlay
             muted
             loop

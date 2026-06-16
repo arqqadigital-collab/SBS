@@ -31,9 +31,15 @@ import {
   Network,
 } from "lucide-react";
 import logo from "@/assets/logo.png";
-import hisHeroVideo from "@/assets/header-bg.mp4";
-import hisCtaVideo from "@/assets/about-hero.mp4";
-import bgStepsLight from "@/assets/stats-bg.jpg";
+import hisHeroVideo from "@/assets/his-hero.mp4.asset.json";
+import hisCtaVideo from "@/assets/his-cta.mp4.asset.json";
+import bgStepsLight from "@/assets/bg-steps-light.png.asset.json";
+import registrationStep from "@/assets/his-journey/registration.png.asset.json";
+import outpatientConsultationStep from "@/assets/his-journey/outpatient-consultation.png.asset.json";
+import admissionStep from "@/assets/his-journey/admission.png.asset.json";
+import inpatientCareStep from "@/assets/his-journey/inpatient-care.png.asset.json";
+import dischargeStep from "@/assets/his-journey/discharge.png.asset.json";
+import billingSettlementStep from "@/assets/his-journey/billing-settlement.png.asset.json";
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
@@ -55,12 +61,12 @@ const features = [
 ];
 
 const journey = [
-  { icon: UserPlus, title: "Registration", image: problem1, body: "Patient registered with verified identity and complete demographics. A unique master record is created or retrieved. Duplicate detection prevents fragmented histories." },
-  { icon: CalendarCheck, title: "Outpatient Consultation", image: problem2, body: "Appointment conducted with full clinical history visible. The physician documents, orders, prescribes and refers — all in one screen, all in one workflow." },
-  { icon: BedDouble, title: "Admission", image: problem3, body: "If admission is required, the patient moves from outpatient directly into inpatient workflow. Bed assignment, assessment, reconciliation and nursing documentation begin immediately." },
-  { icon: HeartPulse, title: "Inpatient Care", image: problem4, body: "Every clinical event — rounds, assessments, investigations, procedures, medications, transfers — is documented in the unified record with continuous decision support." },
-  { icon: FileText, title: "Discharge", image: problem5, body: "Discharge planning begins at admission. The summary is generated from structured data. Medications are reconciled and follow-up appointments booked through the patient portal." },
-  { icon: Receipt, title: "Billing & Settlement", image: problem6, body: "All clinical activity is captured automatically. Bills are generated from the clinical record, claims submitted electronically and payment reconciled — closing the financial and clinical record together." },
+  { icon: UserPlus, title: "Registration", image: registrationStep.url, body: "Patient registered with verified identity and complete demographics. A unique master record is created or retrieved. Duplicate detection prevents fragmented histories." },
+  { icon: CalendarCheck, title: "Outpatient Consultation", image: outpatientConsultationStep.url, body: "Appointment conducted with full clinical history visible. The physician documents, orders, prescribes and refers — all in one screen, all in one workflow." },
+  { icon: BedDouble, title: "Admission", image: admissionStep.url, body: "If admission is required, the patient moves from outpatient directly into inpatient workflow. Bed assignment, assessment, reconciliation and nursing documentation begin immediately." },
+  { icon: HeartPulse, title: "Inpatient Care", image: inpatientCareStep.url, body: "Every clinical event — rounds, assessments, investigations, procedures, medications, transfers — is documented in the unified record with continuous decision support." },
+  { icon: FileText, title: "Discharge", image: dischargeStep.url, body: "Discharge planning begins at admission. The summary is generated from structured data. Medications are reconciled and follow-up appointments booked through the patient portal." },
+  { icon: Receipt, title: "Billing & Settlement", image: billingSettlementStep.url, body: "All clinical activity is captured automatically. Bills are generated from the clinical record, claims submitted electronically and payment reconciled — closing the financial and clinical record together." },
 ];
 
 const stats = [
@@ -72,24 +78,24 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-import nphiesLogo from "@/assets/partners/01.png";
-import malaffiLogo from "@/assets/partners/02.png";
-import riayatiLogo from "@/assets/partners/03.png";
-import zatcaLogo from "@/assets/partners/04.png";
-import emiratesIdLogo from "@/assets/partners/05.png";
-import absherLogo from "@/assets/partners/06.png";
-import nhraLogo from "@/assets/partners/07.png";
-import wasfatyLogo from "@/assets/partners/08.png";
+import nphiesLogo from "@/assets/logos/nphies.png.asset.json";
+import malaffiLogo from "@/assets/logos/malaffi.png.asset.json";
+import riayatiLogo from "@/assets/logos/riayati.png.asset.json";
+import zatcaLogo from "@/assets/logos/zatca.png.asset.json";
+import emiratesIdLogo from "@/assets/logos/emirates-id.png.asset.json";
+import absherLogo from "@/assets/logos/absher.png.asset.json";
+import nhraLogo from "@/assets/logos/nhra.png.asset.json";
+import wasfatyLogo from "@/assets/logos/wasfaty.png.asset.json";
 
 const nationalPlatforms = [
-  { name: "NPHIES", logo: nphiesLogo },
-  { name: "Malaffi", logo: malaffiLogo },
-  { name: "Riayati", logo: riayatiLogo },
-  { name: "ZATCA Fatoora", logo: zatcaLogo },
-  { name: "UAE Emirates ID", logo: emiratesIdLogo },
-  { name: "Saudi Absher", logo: absherLogo },
-  { name: "Bahrain NHRA", logo: nhraLogo },
-  { name: "Wasfaty", logo: wasfatyLogo },
+  { name: "NPHIES", logo: nphiesLogo.url },
+  { name: "Malaffi", logo: malaffiLogo.url },
+  { name: "Riayati", logo: riayatiLogo.url },
+  { name: "ZATCA Fatoora", logo: zatcaLogo.url },
+  { name: "UAE Emirates ID", logo: emiratesIdLogo.url },
+  { name: "Saudi Absher", logo: absherLogo.url },
+  { name: "Bahrain NHRA", logo: nhraLogo.url },
+  { name: "Wasfaty", logo: wasfatyLogo.url },
 ];
 
 const faqs = [
@@ -323,7 +329,7 @@ export default function HIS() {
       {/* HERO */}
       <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
-          <video src={hisHeroVideo} autoPlay muted loop playsInline className="h-full w-full object-cover" />
+          <video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
         </div>
 
@@ -523,7 +529,7 @@ export default function HIS() {
       <section
         className="relative px-6 py-24 md:px-12"
         style={{
-          backgroundImage: `url(${bgStepsLight})`,
+          backgroundImage: `url(${bgStepsLight.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -642,7 +648,7 @@ export default function HIS() {
       <section id="contact" className="relative overflow-hidden px-6 py-24 md:px-12" style={{ backgroundColor: "#091628" }}>
         <div className="absolute inset-0">
           <video
-            src={hisCtaVideo}
+            src={hisCtaVideo.url}
             autoPlay
             muted
             loop
