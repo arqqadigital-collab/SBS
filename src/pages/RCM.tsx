@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, animate, useScroll, useTransform } from "framer-motion";
 import {
@@ -19,18 +18,14 @@ import {
   Stethoscope,
   CreditCard,
 } from "lucide-react";
-import logo from "@/assets/logo.png";
-import rcmHeroVideoSrc from "@/assets/rcm/rcm-hero.mp4";
-const rcmHeroVideo = { url: rcmHeroVideoSrc };
-import hisVideoSrc from "@/assets/rcm/his-video.mp4";
-const hisVideo = { url: hisVideoSrc };
+const rcmHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/f832431f-8e72-4434-931a-7265471c44a3/rcm-hero.mp4" };
+const hisVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/53512e6e-1f84-4825-b4b7-a1e545f063a8/his-video.mp4" };
 import rcmProblem1 from "@/assets/rcm/problem-1.jpg";
 
 import rcmProblem3 from "@/assets/rcm/problem-3.jpg";
 import rcmProblem4 from "@/assets/rcm/problem-4.jpg";
 import rcmProblem5 from "@/assets/rcm/problem-5.jpg";
-import rcmProblem2RealSrc from "@/assets/rcm/rcm-problem-2-real.png";
-const rcmProblem2Real = { url: rcmProblem2RealSrc };
+const rcmProblem2Real = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/760e497d-fc6b-438a-b0eb-58235981071c/rcm-problem-2-real.png" };
 import rcmJourney1 from "@/assets/rcm/journey-1.jpg";
 import rcmJourney2 from "@/assets/rcm/journey-2.jpg";
 import rcmJourney3 from "@/assets/rcm/journey-3.jpg";
@@ -40,7 +35,6 @@ import rcmJourney6 from "@/assets/rcm/journey-6.jpg";
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
-import { MainNav } from "@/components/MainNav";
 
 const features = [
   { icon: UserCheck, title: "Registration & Eligibility Verification", body: "Capture complete demographics and verify insurance eligibility in real time against the payer's active policy database. Lapsed coverage, exclusions, and pending authorizations are flagged at the front door — not weeks later when claims are denied." },
@@ -95,7 +89,7 @@ function ExpandingJourney({ steps }: { steps: typeof journey }) {
             onClick={() => setActive(i)}
             animate={{ flexGrow: isActive ? 4 : 1 }}
             transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-            className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/70 md:h-full"
+            className={`group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/70 md:h-full`}
             style={{ flexBasis: 0, minWidth: 0 }}
           >
             <div
@@ -104,7 +98,7 @@ function ExpandingJourney({ steps }: { steps: typeof journey }) {
               aria-hidden="true"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,12,24,0.38)_0%,rgba(5,12,24,0.72)_50%,rgba(5,12,24,0.95)_100%)]" aria-hidden="true" />
-            <div className="relative flex h-full min-h-[320px] flex-col p-7">
+            <div className={`relative flex h-full min-h-[320px] flex-col ${isActive ? 'p-7' : 'p-4'}`}>
               <div
                 className="flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-[var(--shadow-brand)]"
                 style={{ background: "var(--gradient-brand)" }}
@@ -127,8 +121,8 @@ function ExpandingJourney({ steps }: { steps: typeof journey }) {
                 </motion.div>
                 {!isActive && (
                   <div className="mt-auto">
-                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">Step {i + 1}</div>
-                    <h3 className="mt-2 text-lg font-semibold text-white md:text-xl">{step.title}</h3>
+                    <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/65">Step {i + 1}</div>
+                    <h3 className="mt-2 text-sm font-semibold leading-snug text-white md:text-base">{step.title}</h3>
                   </div>
                 )}
               </div>
@@ -201,7 +195,7 @@ export default function RCM() {
   return (
     <>
       {/* HERO */}
-      <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
+      <main className="pt-20 relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
           <video
             src={rcmHeroVideo.url}
@@ -215,19 +209,6 @@ export default function RCM() {
         </div>
 
         <div className="relative z-10 flex min-h-[90vh] flex-col">
-          <header className="flex items-center justify-between px-6 py-6 md:px-12">
-            <Link to="/">
-              <img src={logo} alt="SBS — Superior Business Solutions" className="h-12 w-auto md:h-14" />
-            </Link>
-            <MainNav />
-            <Link
-              to="/"
-              className="rounded-full px-7 py-3 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105"
-              style={{ background: "var(--gradient-brand)" }}
-            >
-              Get Started
-            </Link>
-          </header>
 
           <section className="flex flex-1 items-center justify-center px-6 pb-28 pt-4 md:px-12">
             <motion.div

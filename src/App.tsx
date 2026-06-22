@@ -1,4 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
+import { Header } from "@/components/Header";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import HIS from "./pages/HIS";
@@ -6,6 +7,10 @@ import Dental from "./pages/Dental";
 import LIS from "./pages/LIS";
 import RIS from "./pages/RIS";
 import RCM from "./pages/RCM";
+import BloodBank from "./pages/BloodBank";
+import MedicationDosage from "./pages/MedicationDosage";
+import PACS from "./pages/PACS";
+import AIImaging from "./pages/AIImaging";
 
 function NotFound() {
   return (
@@ -31,15 +36,22 @@ function NotFound() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="/about" element={<About />} />
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
         <Route path="/healthcare/his" element={<HIS />} />
         <Route path="/healthcare/dental" element={<Dental />} />
         <Route path="/healthcare/lis" element={<LIS />} />
         <Route path="/healthcare/ris" element={<RIS />} />
         <Route path="/healthcare/rcm" element={<RCM />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="/healthcare/blood-bank" element={<BloodBank />} />
+        <Route path="/healthcare/medication-dosage" element={<MedicationDosage />} />
+        <Route path="/healthcare/pacs" element={<PACS />} />
+        <Route path="/healthcare/ai-imaging" element={<AIImaging />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }

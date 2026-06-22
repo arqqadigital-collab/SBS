@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform, useInView, animate } from "framer-motion";
 import problem1 from "@/assets/his/problem-1.jpg";
@@ -30,29 +29,18 @@ import {
   ShieldCheck,
   Network,
 } from "lucide-react";
-import logo from "@/assets/logo.png";
-import hisHeroVideoSrc from "@/assets/his-hero.mp4";
-import hisCtaVideoSrc from "@/assets/his-cta.mp4";
-import bgStepsLightSrc from "@/assets/bg-steps-light.png";
-import registrationStepSrc from "@/assets/his-journey/registration.png";
-import outpatientConsultationStepSrc from "@/assets/his-journey/outpatient-consultation.png";
-import admissionStepSrc from "@/assets/his-journey/admission.png";
-import inpatientCareStepSrc from "@/assets/his-journey/inpatient-care.png";
-import dischargeStepSrc from "@/assets/his-journey/discharge.png";
-import billingSettlementStepSrc from "@/assets/his-journey/billing-settlement.png";
-const hisHeroVideo = { url: hisHeroVideoSrc };
-const hisCtaVideo = { url: hisCtaVideoSrc };
-const bgStepsLight = { url: bgStepsLightSrc };
-const registrationStep = { url: registrationStepSrc };
-const outpatientConsultationStep = { url: outpatientConsultationStepSrc };
-const admissionStep = { url: admissionStepSrc };
-const inpatientCareStep = { url: inpatientCareStepSrc };
-const dischargeStep = { url: dischargeStepSrc };
-const billingSettlementStep = { url: billingSettlementStepSrc };
+const hisHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/bb29083f-6ab8-459b-93ce-ad77bd93a561/his-hero.mp4" };
+const hisCtaVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/22a784dd-4013-4cd1-86ed-dc4a8380e187/his-cta.mp4" };
+const bgStepsLight = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/089894e9-80a4-4e58-b530-69f35466f56e/bg-steps-light.png" };
+const registrationStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/63b9e2e3-8f41-4fa8-811d-6230602d6adf/registration.png" };
+const outpatientConsultationStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/d23fc8fa-b974-4e40-9781-2edb9c0291df/outpatient-consultation.png" };
+const admissionStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/d1d0f2d9-9e09-4fe4-8c3f-1bf081bad884/admission.png" };
+const inpatientCareStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/4645d6d4-65e0-430d-8b71-f1a7522ff16e/inpatient-care.png" };
+const dischargeStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/0ff04520-f17e-441f-8640-44f90b76bfb0/discharge.png" };
+const billingSettlementStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/1fa38721-c952-43aa-8813-f44ab1384604/billing-settlement.png" };
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
-import { MainNav } from "@/components/MainNav";
 
 const features = [
   { icon: UserPlus, title: "Patient Registration & Master Patient Index", body: "Capture complete demographics, identity verification, insurance and consent at first registration. A Master Patient Index ensures every patient has one unique record across your facility — eliminating duplicates and merging fragmented histories. Biometric identity verification is available at registration and every subsequent point of care." },
@@ -87,24 +75,24 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-import nphiesLogo from "@/assets/logos/nphies.png";
-import malaffiLogo from "@/assets/logos/malaffi.png";
-import riayatiLogo from "@/assets/logos/riayati.png";
-import zatcaLogo from "@/assets/logos/zatca.png";
-import emiratesIdLogo from "@/assets/logos/emirates-id.png";
-import absherLogo from "@/assets/logos/absher.png";
-import nhraLogo from "@/assets/logos/nhra.png";
-import wasfatyLogo from "@/assets/logos/wasfaty.png";
+const nphiesLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/588e2324-c9c1-4fef-9aa6-8e7f846c369b/nphies.png" };
+const malaffiLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/221fe5f4-8cf4-4025-bee9-8a7e89f0e03d/malaffi.png" };
+const riayatiLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/bb6f8841-fb72-4cfe-837a-35dfe230db6e/riayati.png" };
+const zatcaLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/c0f04d27-cc0e-442f-8ba4-eab4248380c4/zatca.png" };
+const emiratesIdLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/d13a4d5d-b028-4ef6-aefd-eaa975ffd1e6/emirates-id.png" };
+const absherLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/29bec16a-b6a7-4975-bc23-067b8855244f/absher.png" };
+const nhraLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/782db8eb-7fc9-4fdc-a29a-918bac21a886/nhra.png" };
+const wasfatyLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/90d61b3c-c3f0-4fc2-8314-732347fc7090/wasfaty.png" };
 
 const nationalPlatforms = [
-  { name: "NPHIES", logo: nphiesLogo },
-  { name: "Malaffi", logo: malaffiLogo },
-  { name: "Riayati", logo: riayatiLogo },
-  { name: "ZATCA Fatoora", logo: zatcaLogo },
-  { name: "UAE Emirates ID", logo: emiratesIdLogo },
-  { name: "Saudi Absher", logo: absherLogo },
-  { name: "Bahrain NHRA", logo: nhraLogo },
-  { name: "Wasfaty", logo: wasfatyLogo },
+  { name: "NPHIES", logo: nphiesLogo.url },
+  { name: "Malaffi", logo: malaffiLogo.url },
+  { name: "Riayati", logo: riayatiLogo.url },
+  { name: "ZATCA Fatoora", logo: zatcaLogo.url },
+  { name: "UAE Emirates ID", logo: emiratesIdLogo.url },
+  { name: "Saudi Absher", logo: absherLogo.url },
+  { name: "Bahrain NHRA", logo: nhraLogo.url },
+  { name: "Wasfaty", logo: wasfatyLogo.url },
 ];
 
 const faqs = [
@@ -173,7 +161,7 @@ function ExpandingJourney({ steps }: { steps: typeof journey }) {
             onClick={() => setActive(i)}
             animate={{ flexGrow: isActive ? 4 : 1 }}
             transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-            className="group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/70 md:h-full md:p-8"
+            className={`group relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card/70 md:h-full ${isActive ? 'md:p-8' : 'md:p-4'}`}
             style={{ flexBasis: 0, minWidth: 0 }}
           >
             <div
@@ -182,7 +170,7 @@ function ExpandingJourney({ steps }: { steps: typeof journey }) {
               aria-hidden="true"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,12,24,0.35)_0%,rgba(5,12,24,0.72)_48%,rgba(5,12,24,0.94)_100%)]" aria-hidden="true" />
-            <div className="relative flex h-full min-h-[320px] flex-col p-7">
+            <div className={`relative flex h-full min-h-[320px] flex-col ${isActive ? 'p-7' : 'p-4'}`}>
               <div
                 className="flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-[var(--shadow-brand)]"
                 style={{ background: "var(--gradient-brand)" }}
@@ -209,10 +197,10 @@ function ExpandingJourney({ steps }: { steps: typeof journey }) {
 
                 {!isActive && (
                   <div className="mt-auto">
-                    <div className="text-xs font-bold uppercase tracking-[0.2em] text-white/65">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/65">
                       Step {i + 1}
                     </div>
-                    <h3 className="mt-2 text-lg font-semibold text-white [writing-mode:horizontal-tb] md:text-xl">
+                    <h3 className="mt-2 text-sm font-semibold leading-snug text-white [writing-mode:horizontal-tb] md:text-base">
                       {step.title}
                     </h3>
                   </div>
@@ -336,26 +324,13 @@ export default function HIS() {
   return (
     <>
       {/* HERO */}
-      <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
+      <main className="pt-20 relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
           <video src={hisHeroVideo.url} autoPlay muted loop playsInline className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
         </div>
 
         <div className="relative z-10 flex min-h-[90vh] flex-col">
-          <header className="flex items-center justify-between px-6 py-6 md:px-12">
-            <Link to="/">
-              <img src={logo} alt="SBS — Superior Business Solutions" className="h-12 w-auto md:h-14" />
-            </Link>
-            <MainNav />
-            <Link
-              to="/"
-              className="rounded-full px-7 py-3 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105"
-              style={{ background: "var(--gradient-brand)" }}
-            >
-              Get Started
-            </Link>
-          </header>
 
           <section className="flex flex-1 items-center justify-center px-6 pb-28 pt-4 md:px-12">
             <motion.div

@@ -33,8 +33,8 @@ const menus: Menu[] = [
         label: "Specialized Clinical Modules",
         description: "Targeted modules for specialized care",
         items: [
-          { label: "Blood Bank & Donor Management", href: "#" },
-          { label: "Medication & Dosage Management", href: "#" },
+          { label: "Blood Bank & Donor Management", to: "/healthcare/blood-bank" },
+          { label: "Medication & Dosage Management", to: "/healthcare/medication-dosage" },
           { label: "Telemedicine & Virtual Care", href: "#" },
           { label: "Hospital Operations & RTLS", href: "#" },
         ],
@@ -43,8 +43,8 @@ const menus: Menu[] = [
         label: "Medical Imaging",
         description: "PACS, archiving and AI imaging",
         items: [
-          { label: "PACS & Medical Archiving", href: "#" },
-          { label: "AI for Medical Imaging", href: "#" },
+          { label: "PACS & Medical Archiving", to: "/healthcare/pacs" },
+          { label: "AI for Medical Imaging", to: "/healthcare/ai-imaging" },
         ],
       },
       {

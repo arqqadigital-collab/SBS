@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, animate, useScroll, useTransform } from "framer-motion";
 import {
@@ -18,21 +17,20 @@ import {
   Rocket,
   TrendingUp,
 } from "lucide-react";
-import logo from "@/assets/logo.png";
-import lisHeroVideoSrc from "@/assets/lis/lis-hero.mp4";
-const lisHeroVideo = { url: lisHeroVideoSrc };
+const lisHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/9d928554-8f37-450a-8749-71c7d85542c7/lis-hero.mp4" };
 import lisProblem1 from "@/assets/lis/problem-1.jpg";
 import lisProblem2 from "@/assets/lis/problem-2.jpg";
 import lisProblem3 from "@/assets/lis/problem-3.jpg";
 import lisProblem4 from "@/assets/lis/problem-4.jpg";
 import lisJourney1 from "@/assets/lis/journey-1.jpg";
-import lisJourney2 from "@/assets/lis/journey-2-real.png";
-import lisJourney3 from "@/assets/lis/journey-3-real.png";
+const lisJourney2Asset = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/0cd2ebcc-fd68-4506-a400-c402526223ea/lis-journey-2.png" };
+const lisJourney3Asset = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/825a8d49-9048-427f-97ad-1dc8dd943686/lis-journey-3.png" };
+const lisJourney2 = lisJourney2Asset.url;
+const lisJourney3 = lisJourney3Asset.url;
 import lisJourney4 from "@/assets/lis/journey-4.jpg";
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
-import { MainNav } from "@/components/MainNav";
 
 const features = [
   { icon: FlaskConical, title: "Sample Management", body: "Track every specimen from collection to disposal with barcode scanning, real-time location updates, and automated rejection flags for compromised samples." },
@@ -182,7 +180,7 @@ export default function LIS() {
   return (
     <>
       {/* HERO */}
-      <main className="relative min-h-[90vh] w-full overflow-hidden bg-background">
+      <main className="pt-20 relative min-h-[90vh] w-full overflow-hidden bg-background">
         <div className="absolute inset-0">
           <video
             src={lisHeroVideo.url}
@@ -196,19 +194,6 @@ export default function LIS() {
         </div>
 
         <div className="relative z-10 flex min-h-[90vh] flex-col">
-          <header className="flex items-center justify-between px-6 py-6 md:px-12">
-            <Link to="/">
-              <img src={logo} alt="SBS — Superior Business Solutions" className="h-12 w-auto md:h-14" />
-            </Link>
-            <MainNav />
-            <Link
-              to="/"
-              className="rounded-full px-7 py-3 text-sm font-semibold text-white shadow-[var(--shadow-brand)] transition-transform hover:scale-105"
-              style={{ background: "var(--gradient-brand)" }}
-            >
-              Get Started
-            </Link>
-          </header>
 
           <section className="flex flex-1 items-center justify-center px-6 pb-28 pt-4 md:px-12">
             <motion.div
