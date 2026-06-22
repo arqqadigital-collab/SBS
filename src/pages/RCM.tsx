@@ -18,14 +18,14 @@ import {
   Stethoscope,
   CreditCard,
 } from "lucide-react";
-const rcmHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/f832431f-8e72-4434-931a-7265471c44a3/rcm-hero.mp4" };
-const hisVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/53512e6e-1f84-4825-b4b7-a1e545f063a8/his-video.mp4" };
+const rcmHeroVideo = { url: "/assets/rcm-hero.mp4" };
+const hisVideo = { url: "/assets/his-video.mp4" };
 import rcmProblem1 from "@/assets/rcm/problem-1.jpg";
 
 import rcmProblem3 from "@/assets/rcm/problem-3.jpg";
 import rcmProblem4 from "@/assets/rcm/problem-4.jpg";
 import rcmProblem5 from "@/assets/rcm/problem-5.jpg";
-const rcmProblem2Real = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/760e497d-fc6b-438a-b0eb-58235981071c/rcm-problem-2-real.png" };
+const rcmProblem2Real = { url: "/assets/rcm-problem-2-real.png" };
 import rcmJourney1 from "@/assets/rcm/journey-1.jpg";
 import rcmJourney2 from "@/assets/rcm/journey-2.jpg";
 import rcmJourney3 from "@/assets/rcm/journey-3.jpg";

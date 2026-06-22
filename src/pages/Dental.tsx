@@ -18,22 +18,22 @@ import {
   ChevronDown,
   CheckCircle2,
 } from "lucide-react";
-const dentalHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/4b6d0aa9-d1de-46e3-87f5-451cc3356fb0/dental-hero.mp4" };
+const dentalHeroVideo = { url: "/assets/dental-hero.mp4" };
 import problem1 from "@/assets/dental/problem-1.jpg";
 import problem2 from "@/assets/dental/problem-2.jpg";
 import problem3 from "@/assets/dental/problem-3.jpg";
 import problem4 from "@/assets/dental/problem-4.jpg";
 import problem5 from "@/assets/dental/problem-5.jpg";
 import problem6 from "@/assets/dental/problem-6.jpg";
-const preVisitOnlineBooking = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/e64d4554-c9ee-48a5-895e-91c2dde138b4/pre-visit-online-booking.png" };
-const checkInReception = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/e1fc7e88-88c4-4153-b6d1-a214b397de11/check-in-reception.png" };
-const examinationCharting = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/75b11efb-9682-4b79-b295-b44ace6d6462/examination-charting.png" };
-const treatmentPlanApproval = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/c43de1c2-fc68-490c-afb4-77b89a58dceb/treatment-plan-approval.png" };
-const treatmentDeliveredDocumented = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/65b0f4e0-4aad-43cc-bec9-704988f6dc13/treatment-delivered-documented.png" };
-const claimPaymentRecallSet = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/6562e94a-edbe-45a3-b401-eef627211b82/claim-payment-recall-set.png" };
+const preVisitOnlineBooking = { url: "/assets/pre-visit-online-booking.png" };
+const checkInReception = { url: "/assets/check-in-reception.png" };
+const examinationCharting = { url: "/assets/examination-charting.png" };
+const treatmentPlanApproval = { url: "/assets/treatment-plan-approval.png" };
+const treatmentDeliveredDocumented = { url: "/assets/treatment-delivered-documented.png" };
+const claimPaymentRecallSet = { url: "/assets/claim-payment-recall-set.png" };
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
-const dentalCtaVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/2d89544e-a1da-48e5-a24b-3d0bf71b18db/dental-cta.mp4" };
+const dentalCtaVideo = { url: "/assets/dental-cta.mp4" };
 
 function AnimatedStat({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);

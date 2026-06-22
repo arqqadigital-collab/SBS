@@ -17,14 +17,14 @@ import {
   Rocket,
   TrendingUp,
 } from "lucide-react";
-const lisHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/9d928554-8f37-450a-8749-71c7d85542c7/lis-hero.mp4" };
+const lisHeroVideo = { url: "/assets/lis-hero.mp4" };
 import lisProblem1 from "@/assets/lis/problem-1.jpg";
 import lisProblem2 from "@/assets/lis/problem-2.jpg";
 import lisProblem3 from "@/assets/lis/problem-3.jpg";
 import lisProblem4 from "@/assets/lis/problem-4.jpg";
 import lisJourney1 from "@/assets/lis/journey-1.jpg";
-const lisJourney2Asset = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/0cd2ebcc-fd68-4506-a400-c402526223ea/lis-journey-2.png" };
-const lisJourney3Asset = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/825a8d49-9048-427f-97ad-1dc8dd943686/lis-journey-3.png" };
+const lisJourney2Asset = { url: "/assets/lis-journey-2.png" };
+const lisJourney3Asset = { url: "/assets/lis-journey-3.png" };
 const lisJourney2 = lisJourney2Asset.url;
 const lisJourney3 = lisJourney3Asset.url;
 import lisJourney4 from "@/assets/lis/journey-4.jpg";

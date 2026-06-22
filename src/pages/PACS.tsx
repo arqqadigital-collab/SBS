@@ -37,7 +37,7 @@ import journeyRetrieve from "@/assets/pacs/journey/retrieve.jpg";
 import journeyReport from "@/assets/pacs/journey/report.jpg";
 import journeyDeliver from "@/assets/pacs/journey/deliver.jpg";
 import heroImage from "@/assets/pacs/hero.jpg";
-const bgStepsLight = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/089894e9-80a4-4e58-b530-69f35466f56e/bg-steps-light.png" };
+const bgStepsLight = { url: "/assets/bg-steps-light.png" };
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
 

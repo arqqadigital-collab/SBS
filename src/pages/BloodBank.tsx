@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 const heroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/cf65c0e9-4443-4a1d-9733-8e291e0f3c72/blood-bank-hero.mp4" };
 const ctaVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/9ee6423e-57e9-4dc6-9f1d-34e778555282/cta-video.mp4" };
-const bgStepsLight = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/089894e9-80a4-4e58-b530-69f35466f56e/bg-steps-light.png" };
+const bgStepsLight = { url: "/assets/bg-steps-light.png" };
 import problemMislabeled from "@/assets/blood-bank/problems/mislabeled.jpg";
 import problemExpired from "@/assets/blood-bank/problems/expired.jpg";
 import problemPaper from "@/assets/blood-bank/problems/paper.jpg";

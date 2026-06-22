@@ -29,15 +29,15 @@ import {
   ShieldCheck,
   Network,
 } from "lucide-react";
-const hisHeroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/bb29083f-6ab8-459b-93ce-ad77bd93a561/his-hero.mp4" };
-const hisCtaVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/22a784dd-4013-4cd1-86ed-dc4a8380e187/his-cta.mp4" };
-const bgStepsLight = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/089894e9-80a4-4e58-b530-69f35466f56e/bg-steps-light.png" };
-const registrationStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/63b9e2e3-8f41-4fa8-811d-6230602d6adf/registration.png" };
-const outpatientConsultationStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/d23fc8fa-b974-4e40-9781-2edb9c0291df/outpatient-consultation.png" };
-const admissionStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/d1d0f2d9-9e09-4fe4-8c3f-1bf081bad884/admission.png" };
-const inpatientCareStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/4645d6d4-65e0-430d-8b71-f1a7522ff16e/inpatient-care.png" };
-const dischargeStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/0ff04520-f17e-441f-8640-44f90b76bfb0/discharge.png" };
-const billingSettlementStep = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/1fa38721-c952-43aa-8813-f44ab1384604/billing-settlement.png" };
+const hisHeroVideo = { url: "/assets/his-hero.mp4" };
+const hisCtaVideo = { url: "/assets/his-cta.mp4" };
+const bgStepsLight = { url: "/assets/bg-steps-light.png" };
+const registrationStep = { url: "/assets/registration.png" };
+const outpatientConsultationStep = { url: "/assets/outpatient-consultation.png" };
+const admissionStep = { url: "/assets/admission.png" };
+const inpatientCareStep = { url: "/assets/inpatient-care.png" };
+const dischargeStep = { url: "/assets/discharge.png" };
+const billingSettlementStep = { url: "/assets/billing-settlement.png" };
 
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
@@ -75,14 +75,14 @@ const stats = [
   { value: "100%", label: "Of HIS clients pursuing EMRAM Stage 6 achieved it within their target timeline" },
 ];
 
-const nphiesLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/588e2324-c9c1-4fef-9aa6-8e7f846c369b/nphies.png" };
-const malaffiLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/221fe5f4-8cf4-4025-bee9-8a7e89f0e03d/malaffi.png" };
-const riayatiLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/bb6f8841-fb72-4cfe-837a-35dfe230db6e/riayati.png" };
-const zatcaLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/c0f04d27-cc0e-442f-8ba4-eab4248380c4/zatca.png" };
-const emiratesIdLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/d13a4d5d-b028-4ef6-aefd-eaa975ffd1e6/emirates-id.png" };
-const absherLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/29bec16a-b6a7-4975-bc23-067b8855244f/absher.png" };
-const nhraLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/782db8eb-7fc9-4fdc-a29a-918bac21a886/nhra.png" };
-const wasfatyLogo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/90d61b3c-c3f0-4fc2-8314-732347fc7090/wasfaty.png" };
+const nphiesLogo = { url: "/assets/nphies.png" };
+const malaffiLogo = { url: "/assets/malaffi.png" };
+const riayatiLogo = { url: "/assets/riayati.png" };
+const zatcaLogo = { url: "/assets/zatca.png" };
+const emiratesIdLogo = { url: "/assets/emirates-id.png" };
+const absherLogo = { url: "/assets/absher.png" };
+const nhraLogo = { url: "/assets/nhra.png" };
+const wasfatyLogo = { url: "/assets/wasfaty.png" };
 
 const nationalPlatforms = [
   { name: "NPHIES", logo: nphiesLogo.url },
