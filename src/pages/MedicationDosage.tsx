@@ -29,8 +29,8 @@ import journeyDispense from "@/assets/medication/journey/dispense.jpg";
 import journeyAdminister from "@/assets/medication/journey/administer.jpg";
 import journeyDocument from "@/assets/medication/journey/document.jpg";
 const bgStepsLight = { url: "/assets/bg-steps-light.png" };
-const ctaVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/fe94eb48-6780-42d3-9ae6-0f7e214987a9/cta-video.mp4" };
-const heroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/fe019bad-2286-4917-9229-37f4bfb88859/medication-hero-bg.mp4" };
+const ctaVideo = { url: "/assets/cta-video.mp4" };
+const heroVideo = { url: "/assets/medication-hero-bg.mp4" };
 import { Footer } from "@/components/Footer";
 import { CtaSection } from "@/components/CtaSection";
 

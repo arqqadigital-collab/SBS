@@ -25,7 +25,7 @@ import {
   FileCheck,
   Sparkles,
 } from "lucide-react";
-const heroVideo = { url: "https://preview--digital-clarity-hero.lovable.app/__l5e/assets-v1/bd03d588-157e-45ba-bd2a-1bf46f05592e/hero-video.mp4" };
+const heroVideo = { url: "/assets/hero-video.mp4" };
 import journeyAcquire from "@/assets/ai-imaging/journey/acquire.jpg";
 import journeyAnalyze from "@/assets/ai-imaging/journey/analyze.jpg";
 import journeyPrioritize from "@/assets/ai-imaging/journey/prioritize.jpg";
