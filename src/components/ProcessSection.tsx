@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import process1 from "@/assets/process-1.mov";
-import process2 from "@/assets/process-2.mov";
-import process3 from "@/assets/process-3.mov";
+const process1 = "/assets/process-1.mov";
+const process2 = "/assets/process-2.mov";
+const process3 = "/assets/process-3.mov";
 
 type Card = {
   title: string;

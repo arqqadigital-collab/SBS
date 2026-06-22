@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Star } from "lucide-react";
-import ctaVideo from "@/assets/cta-testimonial.mov";
+const ctaVideo = "/assets/cta-testimonial.mov";
 
 const testimonials = [
   {
