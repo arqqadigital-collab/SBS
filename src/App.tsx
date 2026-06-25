@@ -11,6 +11,9 @@ import BloodBank from "./pages/BloodBank";
 import MedicationDosage from "./pages/MedicationDosage";
 import PACS from "./pages/PACS";
 import AIImaging from "./pages/AIImaging";
+import UAECompliance from "./pages/UAECompliance";
+import EMRAM from "./pages/EMRAM";
+import Dynamics365 from "./pages/Dynamics365";
 
 function NotFound() {
   return (
@@ -50,6 +53,9 @@ export default function App() {
         <Route path="/healthcare/medication-dosage" element={<MedicationDosage />} />
         <Route path="/healthcare/pacs" element={<PACS />} />
         <Route path="/healthcare/ai-imaging" element={<AIImaging />} />
+        <Route path="/healthcare/uae-compliance" element={<UAECompliance />} />
+        <Route path="/healthcare/emram" element={<EMRAM />} />
+        <Route path="/erp/dynamics-365" element={<Dynamics365 />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

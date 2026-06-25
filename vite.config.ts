@@ -5,21 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    tsconfigPaths(),
-    {
-      // Allow Vite to handle .mov files as asset URLs
-      name: "mov-asset",
-      transform(_code, id) {
-        if (id.endsWith(".mov")) {
-          return { code: `export default ${JSON.stringify(id)};`, map: null };
-        }
-      },
-    },
-  ],
-  assetsInclude: ["**/*.mov"],
+  plugins: [react(), tailwindcss(), tsconfigPaths()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

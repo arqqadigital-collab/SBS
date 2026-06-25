@@ -13,7 +13,7 @@ type Menu = { label: string; items: MenuItem[] };
 
 const menus: Menu[] = [
   {
-    label: "Health Care",
+    label: "HealthCare",
     items: [
       {
         label: "Hospital & Clinical Systems",
@@ -52,7 +52,7 @@ const menus: Menu[] = [
         description: "Regional compliance and standards",
         items: [
           { label: "KSA Compliance & Interoperability", href: "#" },
-          { label: "UAE Compliance & Interoperability", href: "#" },
+          { label: "UAE Compliance & Interoperability", to: "/healthcare/uae-compliance" },
         ],
       },
       {
@@ -60,22 +60,18 @@ const menus: Menu[] = [
         description: "Clinical AI and readiness",
         items: [
           { label: "Clinical AI & Documentation", href: "#" },
-          { label: "EMRAM Roadmap & AI Readiness", href: "#" },
+          { label: "EMRAM Roadmap & AI Readiness", to: "/healthcare/emram" },
         ],
       },
       {
         label: "Patient Engagement & Identity",
         description: "Patient portals and identity management",
-        items: [
-          { label: "Patient Engagement & Identity", href: "#" },
-        ],
+        items: [{ label: "Patient Engagement & Identity", href: "#" }],
       },
       {
         label: "Revenue Cycle & Financial Performance",
         description: "Billing and financial operations",
-        items: [
-          { label: "Revenue Cycle & Financial Performance", href: "#" },
-        ],
+        items: [{ label: "Revenue Cycle & Financial Performance", href: "#" }],
       },
     ],
   },
@@ -86,7 +82,7 @@ const menus: Menu[] = [
         label: "ERP Platforms",
         description: "Enterprise resource planning suites",
         items: [
-          { label: "Microsoft Dynamics 365 Business Central", href: "#" },
+          { label: "Microsoft Dynamics 365 Business Central", to: "/erp/dynamics-365" },
           { label: "Odoo", href: "#" },
           { label: "Zoho", href: "#" },
         ],
@@ -177,7 +173,7 @@ const menus: Menu[] = [
   },
 ];
 
-const simpleLinks = ["Clients", "Contact"];
+const simpleLinks = ["Contact"];
 
 function LeafLink({
   item,
@@ -217,9 +213,7 @@ function MegaPanel({ menu }: { menu: Menu }) {
             className="group/leaf flex flex-col gap-1 rounded-xl p-3 transition-colors hover:bg-white/10"
           >
             <span className="text-sm font-semibold text-white">{item.label}</span>
-            {item.description && (
-              <span className="text-xs text-white/60">{item.description}</span>
-            )}
+            {item.description && <span className="text-xs text-white/60">{item.description}</span>}
           </LeafLink>
         ))}
       </div>
@@ -268,17 +262,18 @@ function MegaPanel({ menu }: { menu: Menu }) {
           }
 
           return (
-            <LeafLink
-              key={item.label}
-              item={item}
-              className={className}
-            >
+            <LeafLink key={item.label} item={item} className={className}>
               {content}
             </LeafLink>
           );
         })}
       </div>
-      <div className="p-3" onMouseEnter={() => { /* keep active */ }}>
+      <div
+        className="p-3"
+        onMouseEnter={() => {
+          /* keep active */
+        }}
+      >
         {active.items && active.items.length > 0 ? (
           <div className="space-y-1">
             <div className="px-3 pb-2 pt-1 text-xs font-semibold uppercase tracking-wider text-white/40">
