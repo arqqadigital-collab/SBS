@@ -66,12 +66,16 @@ const menus: Menu[] = [
       {
         label: "Patient Engagement & Identity",
         description: "Patient portals and identity management",
-        items: [{ label: "Patient Engagement & Identity", href: "#" }],
+        items: [
+          { label: "Patient Engagement & Identity", href: "#" },
+        ],
       },
       {
         label: "Revenue Cycle & Financial Performance",
         description: "Billing and financial operations",
-        items: [{ label: "Revenue Cycle & Financial Performance", href: "#" }],
+        items: [
+          { label: "Revenue Cycle & Financial Performance", href: "#" },
+        ],
       },
     ],
   },
@@ -83,16 +87,16 @@ const menus: Menu[] = [
         description: "Enterprise resource planning suites",
         items: [
           { label: "Microsoft Dynamics 365 Business Central", to: "/erp/dynamics-365" },
-          { label: "Odoo", href: "#" },
-          { label: "Zoho", href: "#" },
+          { label: "Odoo", to: "/erp/odoo" },
+          { label: "Zoho", to: "/erp/zoho" },
         ],
       },
       {
         label: "Business Verticals (ERP)",
         description: "Industry-tailored ERP solutions",
         items: [
-          { label: "Manufacturing & Trading", href: "#" },
-          { label: "Logistics & Distribution", href: "#" },
+          { label: "Manufacturing & Trading", to: "/erp/manufacturing" },
+          { label: "Logistics & Distribution", to: "/erp/logistics" },
           { label: "Retail & E-commerce", href: "#" },
           { label: "Education & Research", href: "#" },
         ],
@@ -102,51 +106,11 @@ const menus: Menu[] = [
   {
     label: "Services",
     items: [
-      {
-        label: "Cybersecurity",
-        description: "Protect your digital estate",
-        items: [
-          { label: "Identity & Access Management", href: "#" },
-          { label: "Network & Endpoint Security", href: "#" },
-          { label: "Data Protection & Compliance", href: "#" },
-          { label: "Healthcare Cybersecurity", href: "#" },
-        ],
-      },
-      {
-        label: "Consulting",
-        description: "Strategy and advisory",
-        items: [
-          { label: "Healthcare IT Consulting", href: "#" },
-          { label: "ERP Consulting", href: "#" },
-          { label: "Digital Transformation", href: "#" },
-        ],
-      },
-      {
-        label: "Implementation & Integration",
-        description: "Deploy and integrate",
-        items: [
-          { label: "Integration & Interoperability Services", href: "#" },
-          { label: "Data Migration", href: "#" },
-        ],
-      },
-      {
-        label: "Staff Aug & Managed Services",
-        description: "Talent and managed ops",
-        items: [
-          { label: "Healthcare IT Professionals", href: "#" },
-          { label: "EMR Specialists (Epic/Cerner/InterSystems)", href: "#" },
-          { label: "Managed IT Services", href: "#" },
-          { label: "ERP & Tech Talent", href: "#" },
-        ],
-      },
-      {
-        label: "Learning & Knowledge",
-        description: "Enablement and training",
-        items: [
-          { label: "Totara LMS", href: "#" },
-          { label: "EndNote Reference Management", href: "#" },
-        ],
-      },
+      { label: "Cybersecurity", to: "/services/cybersecurity", description: "Protect your digital estate" },
+      { label: "Consulting", to: "/services/consulting", description: "Strategy and advisory" },
+      { label: "Implementation & Integration", to: "/services/implementation", description: "Deploy and integrate" },
+      { label: "Staff Aug & Managed Services", to: "/services/staff-aug", description: "Talent and managed ops" },
+      { label: "Learning & Knowledge", href: "#", description: "Enablement and training" },
     ],
   },
   {
@@ -164,9 +128,9 @@ const menus: Menu[] = [
         label: "Resources",
         description: "Insights and updates",
         items: [
-          { label: "Blog", href: "#" },
-          { label: "Case Studies", href: "#" },
-          { label: "Events & Webinars", href: "#" },
+        { label: "Blog", to: "/blog" },
+        { label: "Case Studies", to: "/case-studies" },
+        { label: "Events & Webinars", href: "#" },
         ],
       },
     ],
@@ -205,7 +169,7 @@ function MegaPanel({ menu }: { menu: Menu }) {
 
   if (!hasRightPanel) {
     return (
-      <div className="grid grid-cols-2 gap-2 p-4">
+      <div className="grid grid-cols-1 gap-2 p-4">
         {menu.items.map((item) => (
           <LeafLink
             key={item.label}
@@ -213,7 +177,9 @@ function MegaPanel({ menu }: { menu: Menu }) {
             className="group/leaf flex flex-col gap-1 rounded-xl p-3 transition-colors hover:bg-white/10"
           >
             <span className="text-sm font-semibold text-white">{item.label}</span>
-            {item.description && <span className="text-xs text-white/60">{item.description}</span>}
+            {item.description && (
+              <span className="text-xs text-white/60">{item.description}</span>
+            )}
           </LeafLink>
         ))}
       </div>
@@ -262,18 +228,17 @@ function MegaPanel({ menu }: { menu: Menu }) {
           }
 
           return (
-            <LeafLink key={item.label} item={item} className={className}>
+            <LeafLink
+              key={item.label}
+              item={item}
+              className={className}
+            >
               {content}
             </LeafLink>
           );
         })}
       </div>
-      <div
-        className="p-3"
-        onMouseEnter={() => {
-          /* keep active */
-        }}
-      >
+      <div className="p-3" onMouseEnter={() => { /* keep active */ }}>
         {active.items && active.items.length > 0 ? (
           <div className="space-y-1">
             <div className="px-3 pb-2 pt-1 text-xs font-semibold uppercase tracking-wider text-white/40">
@@ -304,7 +269,7 @@ export function MainNav() {
     <nav className="hidden items-center gap-8 lg:flex">
       {menus.map((menu) => {
         const hasRightPanel = menu.items.some((i) => i.items && i.items.length > 0);
-        const width = hasRightPanel ? "w-[640px]" : "w-[520px]";
+        const width = hasRightPanel ? "w-[640px]" : "w-[360px]";
         return (
           <div key={menu.label} className="group relative">
             <button

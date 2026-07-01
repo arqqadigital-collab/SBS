@@ -14,6 +14,16 @@ import AIImaging from "./pages/AIImaging";
 import UAECompliance from "./pages/UAECompliance";
 import EMRAM from "./pages/EMRAM";
 import Dynamics365 from "./pages/Dynamics365";
+import Odoo from "./pages/Odoo";
+import Zoho from "./pages/Zoho";
+import Manufacturing from "./pages/Manufacturing";
+import Logistics from "./pages/Logistics";
+import Cybersecurity from "./pages/Cybersecurity";
+import Consulting from "./pages/Consulting";
+import Implementation from "./pages/Implementation";
+import StaffAug from "./pages/StaffAug";
+import Blog from "./pages/Blog";
+import CaseStudies from "./pages/CaseStudies";
 
 function NotFound() {
   return (
@@ -56,6 +66,16 @@ export default function App() {
         <Route path="/healthcare/uae-compliance" element={<UAECompliance />} />
         <Route path="/healthcare/emram" element={<EMRAM />} />
         <Route path="/erp/dynamics-365" element={<Dynamics365 />} />
+        <Route path="/erp/odoo" element={<Odoo />} />
+        <Route path="/erp/zoho" element={<Zoho />} />
+        <Route path="/erp/manufacturing" element={<Manufacturing />} />
+        <Route path="/erp/logistics" element={<Logistics />} />
+        <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+        <Route path="/services/consulting" element={<Consulting />} />
+        <Route path="/services/implementation" element={<Implementation />} />
+        <Route path="/services/staff-aug" element={<StaffAug />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
